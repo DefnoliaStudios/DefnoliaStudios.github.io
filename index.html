@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Defnolia Studios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sage:    #7a9e7e;
+      --sage-d:  #4d7353;
+      --terra:   #c47c5a;
+      --cream:   #f7f2ea;
+      --warm:    #ede5d8;
+      --text:    #2c2418;
+      --muted:   #7a6e62;
+      --border:  rgba(122,158,126,0.25);
+      --leaf:    #a8c5a2;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247,242,234,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+    }
+
+    .logo-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--sage-d);
+      letter-spacing: 0.02em;
+    }
+
+    nav { display: flex; gap: 28px; align-items: center; }
+
+    nav a {
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--sage-d); }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 88px 28px 72px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-left { position: relative; }
+
+    .hero-tag {
+      display: inline-block;
+      background: var(--leaf);
+      color: var(--sage-d);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 22px;
+      font-weight: 500;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.6rem, 5vw, 3.8rem);
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--sage-d);
+    }
+
+    .hero-desc {
+      font-size: 0.97rem;
+      line-height: 1.75;
+      color: var(--muted);
+      max-width: 400px;
+      margin-bottom: 36px;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--sage-d);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 13px 28px;
+      border-radius: 4px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .hero-cta:hover { background: var(--terra); transform: translateY(-2px); }
+    .hero-cta svg { width: 16px; height: 16px; }
+
+    .hero-right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Decorative botanical illustration (SVG) */
+    .botanical {
+      width: 100%;
+      max-width: 340px;
+      opacity: 0.9;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border), transparent);
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* ── SECTION ── */
+    section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 72px 28px;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--terra);
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .section-body {
+      font-size: 0.97rem;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 580px;
+    }
+
+    /* ── ABOUT GRID ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+      margin-top: 0;
+    }
+
+    .about-left {}
+    .about-right {
+      padding-top: 8px;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .pill {
+      border: 1px solid var(--border);
+      background: var(--warm);
+      color: var(--sage-d);
+      font-size: 0.8rem;
+      padding: 6px 16px;
+      border-radius: 20px;
+      letter-spacing: 0.03em;
+    }
+
+    .name-block {
+      margin-top: 32px;
+      padding: 20px 24px;
+      border-left: 3px solid var(--sage);
+      background: var(--warm);
+      border-radius: 0 6px 6px 0;
+    }
+
+    .name-block .name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--text);
+      font-weight: 600;
+    }
+    .name-block .role {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+
+    /* ── PRODUCTS GRID ── */
+    .products-header {
+      margin-bottom: 36px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--warm);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px 24px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--sage), var(--leaf));
+    }
+
+    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(77,115,83,0.12); }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--leaf);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      font-size: 1.4rem;
+    }
+
+    .card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .card-desc {
+      font-size: 0.86rem;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    .card-badge {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+
+    .badge-live { background: #d4edda; color: #2e7d32; }
+    .badge-soon { background: var(--warm); color: var(--muted); border: 1px solid var(--border); }
+
+    /* ── COMING SOON ── */
+    .coming-soon {
+      background: var(--warm);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 40px 36px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .coming-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .coming-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+
+    .coming-icon {
+      font-size: 3rem;
+      opacity: 0.5;
+    }
+
+    /* ── CONTACT ── */
+    .contact-box {
+      background: var(--sage-d);
+      border-radius: 16px;
+      padding: 52px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      color: #fff;
+    }
+
+    .contact-box .section-label { color: var(--leaf); }
+    .contact-box .section-title { color: #fff; }
+    .contact-box .section-body { color: rgba(255,255,255,0.7); max-width: 100%; }
+
+    .contact-form { display: flex; flex-direction: column; gap: 14px; }
+
+    .contact-form input,
+    .contact-form textarea {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 6px;
+      padding: 12px 16px;
+      color: #fff;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border 0.2s;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: rgba(255,255,255,0.45); }
+    .contact-form input:focus,
+    .contact-form textarea:focus { border-color: var(--leaf); }
+    .contact-form textarea { resize: vertical; min-height: 100px; }
+
+    .contact-form button {
+      background: var(--terra);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 13px 20px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .contact-form button:hover { background: #b36a48; transform: translateY(-1px); }
+
+    .success-msg {
+      display: none;
+      background: rgba(168,197,162,0.25);
+      border: 1px solid var(--leaf);
+      border-radius: 6px;
+      padding: 14px;
+      font-size: 0.86rem;
+      color: var(--leaf);
+      text-align: center;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+    }
+
+    /* ── LANG TOGGLE ── */
+    .lang-toggle {
+      display: flex;
+      gap: 4px;
+    }
+
+    .lang-btn {
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      padding: 5px 12px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font-family: 'Jost', sans-serif;
+      transition: all 0.15s;
+    }
+    .lang-btn.active { background: var(--sage-d); color: #fff; border-color: var(--sage-d); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      .hero { grid-template-columns: 1fr; padding-top: 48px; }
+      .hero-right { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      .contact-box { grid-template-columns: 1fr; padding: 32px 24px; }
+      .coming-soon { grid-template-columns: 1fr; }
+      .coming-icon { display: none; }
+      nav { display: none; }
+    }
+
+    /* ── FADE IN ANIMATION ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <!-- Leaf SVG logo mark -->
+      <svg class="logo-icon" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="34" height="34" rx="8" fill="#7a9e7e"/>
+        <path d="M17 6 C17 6, 26 12, 26 20 C26 25, 22 28, 17 28 C17 28, 17 14, 10 10 C13 8, 17 6, 17 6Z" fill="#f7f2ea" opacity="0.9"/>
+        <path d="M17 28 C17 28, 17 18, 11 13" stroke="#4d7353" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-name">Defnolia Studios</span>
+    </a>
+    <nav>
+      <a href="#about" data-en="About" data-tr="Hakkında">About</a>
+      <a href="#products" data-en="Products" data-tr="Ürünler">Products</a>
+      <a href="#contact" data-en="Contact" data-tr="İletişim">Contact</a>
+    </nav>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('tr')">TR</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero fade-up">
+  <div class="hero-left">
+    <span class="hero-tag" data-en="Independent Digital Publisher" data-tr="Bağımsız Dijital Yayıncı">Independent Digital Publisher</span>
+    <h1 class="hero-title">
+      <span data-en="Creative <em>digital</em><br>content studio" data-tr="Yaratıcı <em>dijital</em><br>içerik stüdyosu">Creative <em>digital</em><br>content studio</span>
+    </h1>
+    <p class="hero-desc" data-en="Defnolia Studios creates thoughtfully designed digital books and interactive content — crafted with care, published with purpose." data-tr="Defnolia Studios; özenle tasarlanmış dijital kitaplar ve etkileşimli içerikler üretir. Her içerik, dikkat ve özgünlükle hayata geçirilir.">
+      Defnolia Studios creates thoughtfully designed digital books and interactive content — crafted with care, published with purpose.
+    </p>
+    <a href="#products" class="hero-cta">
+      <span data-en="Explore our work" data-tr="Ürünlerimizi keşfedin">Explore our work</span>
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+  <div class="hero-right">
+    <!-- Botanical SVG illustration -->
+    <svg class="botanical" viewBox="0 0 320 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Background circle -->
+      <circle cx="160" cy="180" r="140" fill="#ede5d8" opacity="0.6"/>
+      <!-- Stem -->
+      <path d="M160 300 C160 300, 160 180, 160 120" stroke="#7a9e7e" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- Large left leaf -->
+      <path d="M160 200 C160 200, 110 170, 95 140 C115 148, 135 170, 160 200Z" fill="#a8c5a2" opacity="0.85"/>
+      <path d="M160 200 C127 170, 107 155, 95 140" stroke="#7a9e7e" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+      <!-- Large right leaf -->
+      <path d="M160 220 C160 220, 210 195, 225 162 C205 170, 183 195, 160 220Z" fill="#7a9e7e" opacity="0.75"/>
+      <path d="M160 220 C193 195, 210 178, 225 162" stroke="#4d7353" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+      <!-- Upper left leaf -->
+      <path d="M160 165 C160 165, 118 150, 108 126 C126 133, 145 150, 160 165Z" fill="#a8c5a2" opacity="0.7"/>
+      <!-- Upper right leaf -->
+      <path d="M160 155 C160 155, 200 140, 212 115 C194 122, 175 140, 160 155Z" fill="#7a9e7e" opacity="0.65"/>
+      <!-- Top small leaves -->
+      <path d="M160 130 C160 130, 140 118, 135 100 C147 107, 155 118, 160 130Z" fill="#a8c5a2" opacity="0.6"/>
+      <path d="M160 125 C160 125, 178 113, 183 96 C171 103, 163 113, 160 125Z" fill="#7a9e7e" opacity="0.55"/>
+      <!-- Decorative berries / dots -->
+      <circle cx="130" cy="242" r="8" fill="#c47c5a" opacity="0.7"/>
+      <circle cx="118" cy="255" r="5" fill="#c47c5a" opacity="0.5"/>
+      <circle cx="140" cy="253" r="4" fill="#c47c5a" opacity="0.4"/>
+      <circle cx="195" cy="260" r="7" fill="#c47c5a" opacity="0.6"/>
+      <circle cx="207" cy="271" r="4" fill="#c47c5a" opacity="0.4"/>
+      <!-- Book shape at bottom -->
+      <rect x="125" y="270" width="70" height="50" rx="4" fill="#f7f2ea" stroke="#7a9e7e" stroke-width="1.5" opacity="0.8"/>
+      <path d="M160 270 L160 320" stroke="#7a9e7e" stroke-width="1" opacity="0.5"/>
+      <path d="M133 282 L155 282" stroke="#a8c5a2" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+      <path d="M133 290 L155 290" stroke="#a8c5a2" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+      <path d="M133 298 L148 298" stroke="#a8c5a2" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+      <path d="M165 282 L188 282" stroke="#a8c5a2" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+      <path d="M165 290 L188 290" stroke="#a8c5a2" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+      <path d="M165 298 L180 298" stroke="#a8c5a2" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+    </svg>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid fade-up">
+    <div class="about-left">
+      <p class="section-label" data-en="About" data-tr="Hakkında">About</p>
+      <h2 class="section-title" data-en="A studio built on<br>creativity & craft" data-tr="Yaratıcılık ve özene<br>dayalı bir stüdyo">A studio built on<br>creativity & craft</h2>
+      <p class="section-body" data-en="Defnolia Studios is an independent digital publishing studio specialising in creative books and content for all ages. Inspired by the name of our daughter Defne, we put heart into everything we create." data-tr="Defnolia Studios; her yaşa yönelik yaratıcı kitaplar ve içerikler üreten bağımsız bir dijital yayın stüdyosudur. Kızımız Defne'nin adından ilham alan stüdyomuz, ürettiği her içeriğe kalbini koyar.">
+        Defnolia Studios is an independent digital publishing studio specialising in creative books and content for all ages. Inspired by the name of our daughter Defne, we put heart into everything we create.
+      </p>
+
+      <div class="pill-list">
+        <span class="pill" data-en="Digital Books" data-tr="Dijital Kitaplar">Digital Books</span>
+        <span class="pill" data-en="Coloring Books" data-tr="Boyama Kitapları">Coloring Books</span>
+        <span class="pill" data-en="Google Play Books" data-tr="Google Play Books">Google Play Books</span>
+        <span class="pill" data-en="AI-Assisted Design" data-tr="Yapay Zeka Destekli Tasarım">AI-Assisted Design</span>
+      </div>
+    </div>
+
+    <div class="about-right">
+      <div class="name-block">
+        <div class="name">Feride Pınar Tuna</div>
+        <div class="role" data-en="Founder & Publisher · Defnolia Studios" data-tr="Kurucu & Yayıncı · Defnolia Studios">Founder & Publisher · Defnolia Studios</div>
+      </div>
+
+      <p class="section-body" style="margin-top:24px" data-en="We combine thoughtful design with the latest creative tools to bring beautiful, accessible digital books to readers worldwide." data-tr="Güzel, erişilebilir dijital kitapları dünya genelindeki okuyuculara ulaştırmak için özenli tasarımı ve en yeni yaratıcı araçları bir araya getiriyoruz.">
+        We combine thoughtful design with the latest creative tools to bring beautiful, accessible digital books to readers worldwide.
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="products-header fade-up">
+    <p class="section-label" data-en="Our Publications" data-tr="Yayınlarımız">Our Publications</p>
+    <h2 class="section-title" data-en="Books you can hold in your screen" data-tr="Ekranınızda tutabileceğiniz kitaplar">Books you can hold in your screen</h2>
+  </div>
+
+  <div class="cards fade-up">
+    <div class="card">
+      <div class="card-icon">🎨</div>
+      <div class="card-title" data-en="Coloring Book Collection" data-tr="Boyama Kitabı Koleksiyonu">Coloring Book Collection</div>
+      <p class="card-desc" data-en="A growing series of beautifully illustrated AI-assisted coloring books, available on Google Play Books. Designs for children and adults alike." data-tr="Google Play Books'ta yer alan, yapay zeka destekli illüstrasyonlarla hazırlanmış büyüyen bir boyama kitabı serisi. Çocuklar ve yetişkinler için tasarımlar.">
+        A growing series of beautifully illustrated AI-assisted coloring books, available on Google Play Books. Designs for children and adults alike.
+      </p>
+      <span class="card-badge badge-live" data-en="Available on Google Play Books" data-tr="Google Play Books'ta Mevcut">Available on Google Play Books</span>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">📱</div>
+      <div class="card-title" data-en="Mobile Apps" data-tr="Mobil Uygulamalar">Mobile Apps</div>
+      <p class="card-desc" data-en="Interactive educational and creative apps are currently in development. Our first apps will bring the coloring book experience to life on Android devices." data-tr="Etkileşimli eğitim ve yaratıcılık uygulamaları geliştirme aşamasındadır. İlk uygulamalarımız boyama kitabı deneyimini Android cihazlarda hayata geçirecek.">
+        Interactive educational and creative apps are currently in development. Our first apps will bring the coloring book experience to life on Android devices.
+      </p>
+      <span class="card-badge badge-soon" data-en="In Development" data-tr="Geliştirme Aşamasında">In Development</span>
+    </div>
+  </div>
+
+  <div class="coming-soon fade-up" style="margin-top:28px">
+    <div>
+      <h3 class="coming-title" data-en="More content is on the way" data-tr="Daha fazla içerik yolda">More content is on the way</h3>
+      <p class="coming-desc" data-en="We are continuously working on new books, apps, and creative projects. Follow our progress and be the first to know when new content launches." data-tr="Yeni kitaplar, uygulamalar ve yaratıcı projeler üzerinde çalışmaya devam ediyoruz. Gelişmelerimizi takip edin ve yeni içeriklerimizden ilk siz haberdar olun.">
+        We are continuously working on new books, apps, and creative projects. Follow our progress and be the first to know when new content launches.
+      </p>
+    </div>
+    <div class="coming-icon">🌿</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact" style="padding-top:56px; padding-bottom:80px">
+  <div class="contact-box fade-up">
+    <div>
+      <p class="section-label" data-en="Get in Touch" data-tr="İletişime Geçin">Get in Touch</p>
+      <h2 class="section-title" data-en="We'd love<br>to hear from you" data-tr="Sizden<br>haber almak isteriz">We'd love<br>to hear from you</h2>
+      <p class="section-body" style="margin-top:16px" data-en="Questions about our books, collaboration proposals, or just want to say hello — send us a message and we'll get back to you shortly." data-tr="Kitaplarımız hakkındaki sorular, iş birliği önerileri ya da sadece merhaba demek için — bize mesaj gönderin, kısa sürede geri döneceğiz.">
+        Questions about our books, collaboration proposals, or just want to say hello — send us a message and we'll get back to you shortly.
+      </p>
+    </div>
+
+    <div>
+      <form class="contact-form" id="contactForm">
+        <input type="text" id="fname" placeholder="Name / İsim" required />
+        <input type="email" id="femail" placeholder="Email" required />
+        <textarea id="fmsg" placeholder="Message / Mesaj" required></textarea>
+        <button type="submit" data-en="Send Message" data-tr="Mesaj Gönder">Send Message</button>
+      </form>
+      <div class="success-msg" id="successMsg" data-en="Thank you! We'll get back to you soon." data-tr="Teşekkürler! En kısa sürede geri döneceğiz.">
+        Thank you! We'll get back to you soon.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© <span id="year"></span> Defnolia Studios · Feride Pınar Tuna · <span data-en="All rights reserved." data-tr="Tüm hakları saklıdır.">All rights reserved.</span></p>
+</footer>
+
+<script>
+  // ── YEAR ──
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ── LANGUAGE ──
+  let lang = 'en';
+
+  function setLang(l) {
+    lang = l;
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');
+
+    document.querySelectorAll('[data-en]').forEach(el => {
+      const val = el.getAttribute('data-' + l);
+      if (val) el.innerHTML = val;
+    });
+
+    // Update form button text
+    const btn = document.querySelector('.contact-form button');
+    btn.textContent = l === 'tr' ? 'Mesaj Gönder' : 'Send Message';
+
+    // Update success msg
+    const sm = document.getElementById('successMsg');
+    sm.textContent = l === 'tr' ? 'Teşekkürler! En kısa sürede geri döneceğiz.' : "Thank you! We'll get back to you soon.";
+
+    // Update placeholders
+    document.getElementById('fname').placeholder = l === 'tr' ? 'İsim' : 'Name / İsim';
+    document.getElementById('fmsg').placeholder = l === 'tr' ? 'Mesaj' : 'Message / Mesaj';
+  }
+
+  // ── CONTACT FORM ──
+  // Note: Connect to Formspree after Formspree ID is obtained
+  // Replace YOUR_FORM_ID below after creating a Formspree form at formspree.io
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Temporary local submission (update with Formspree endpoint later)
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+  });
+
+  // ── FADE IN ON SCROLL ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
