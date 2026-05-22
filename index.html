@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Defnolia Studios</title>
+  <link rel="icon" type="image/png" href="logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -153,12 +154,18 @@
       align-items: center;
     }
 
-    /* Decorative botanical illustration (SVG) */
-    .botanical {
+    /* Hero logo image (the laurel D) */
+    .hero-logo {
       width: 100%;
-      max-width: 340px;
-      opacity: 0.9;
-      animation: float 6s ease-in-out infinite;
+      max-width: 380px;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      box-shadow:
+        0 1px 2px rgba(77,115,83,0.08),
+        0 12px 40px rgba(77,115,83,0.18),
+        0 24px 60px rgba(196,124,90,0.10);
+      animation: float 7s ease-in-out infinite;
     }
 
     @keyframes float {
@@ -473,12 +480,7 @@
 <header>
   <div class="header-inner">
     <a href="#" class="logo">
-      <!-- Leaf SVG logo mark -->
-      <svg class="logo-icon" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="34" height="34" rx="8" fill="#7a9e7e"/>
-        <path d="M17 6 C17 6, 26 12, 26 20 C26 25, 22 28, 17 28 C17 28, 17 14, 10 10 C13 8, 17 6, 17 6Z" fill="#f7f2ea" opacity="0.9"/>
-        <path d="M17 28 C17 28, 17 18, 11 13" stroke="#4d7353" stroke-width="1.2" stroke-linecap="round"/>
-      </svg>
+      <img src="logo.png" alt="Defnolia Studios" class="logo-icon" style="object-fit:contain;" />
       <span class="logo-name">Defnolia Studios</span>
     </a>
     <nav>
@@ -509,41 +511,7 @@
     </a>
   </div>
   <div class="hero-right">
-    <!-- Botanical SVG illustration -->
-    <svg class="botanical" viewBox="0 0 320 360" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Background circle -->
-      <circle cx="160" cy="180" r="140" fill="#ede5d8" opacity="0.6"/>
-      <!-- Stem -->
-      <path d="M160 300 C160 300, 160 180, 160 120" stroke="#7a9e7e" stroke-width="2.5" stroke-linecap="round"/>
-      <!-- Large left leaf -->
-      <path d="M160 200 C160 200, 110 170, 95 140 C115 148, 135 170, 160 200Z" fill="#a8c5a2" opacity="0.85"/>
-      <path d="M160 200 C127 170, 107 155, 95 140" stroke="#7a9e7e" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
-      <!-- Large right leaf -->
-      <path d="M160 220 C160 220, 210 195, 225 162 C205 170, 183 195, 160 220Z" fill="#7a9e7e" opacity="0.75"/>
-      <path d="M160 220 C193 195, 210 178, 225 162" stroke="#4d7353" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
-      <!-- Upper left leaf -->
-      <path d="M160 165 C160 165, 118 150, 108 126 C126 133, 145 150, 160 165Z" fill="#a8c5a2" opacity="0.7"/>
-      <!-- Upper right leaf -->
-      <path d="M160 155 C160 155, 200 140, 212 115 C194 122, 175 140, 160 155Z" fill="#7a9e7e" opacity="0.65"/>
-      <!-- Top small leaves -->
-      <path d="M160 130 C160 130, 140 118, 135 100 C147 107, 155 118, 160 130Z" fill="#a8c5a2" opacity="0.6"/>
-      <path d="M160 125 C160 125, 178 113, 183 96 C171 103, 163 113, 160 125Z" fill="#7a9e7e" opacity="0.55"/>
-      <!-- Decorative berries / dots -->
-      <circle cx="130" cy="242" r="8" fill="#c47c5a" opacity="0.7"/>
-      <circle cx="118" cy="255" r="5" fill="#c47c5a" opacity="0.5"/>
-      <circle cx="140" cy="253" r="4" fill="#c47c5a" opacity="0.4"/>
-      <circle cx="195" cy="260" r="7" fill="#c47c5a" opacity="0.6"/>
-      <circle cx="207" cy="271" r="4" fill="#c47c5a" opacity="0.4"/>
-      <!-- Book shape at bottom -->
-      <rect x="125" y="270" width="70" height="50" rx="4" fill="#f7f2ea" stroke="#7a9e7e" stroke-width="1.5" opacity="0.8"/>
-      <path d="M160 270 L160 320" stroke="#7a9e7e" stroke-width="1" opacity="0.5"/>
-      <path d="M133 282 L155 282" stroke="#a8c5a2" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-      <path d="M133 290 L155 290" stroke="#a8c5a2" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-      <path d="M133 298 L148 298" stroke="#a8c5a2" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-      <path d="M165 282 L188 282" stroke="#a8c5a2" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-      <path d="M165 290 L188 290" stroke="#a8c5a2" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-      <path d="M165 298 L180 298" stroke="#a8c5a2" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-    </svg>
+    <img src="logo.png" alt="Defnolia Studios — laurel D monogram" class="hero-logo" />
   </div>
 </div>
 
@@ -560,9 +528,9 @@
       </p>
 
       <div class="pill-list">
-        <span class="pill" data-en="Digital Books" data-tr="Dijital Kitaplar">Digital Books</span>
         <span class="pill" data-en="Coloring Books" data-tr="Boyama Kitapları">Coloring Books</span>
-        <span class="pill" data-en="Google Play Books" data-tr="Google Play Books">Google Play Books</span>
+        <span class="pill" data-en="Children's Books" data-tr="Çocuk Kitapları">Children's Books</span>
+        <span class="pill" data-en="Available on Amazon" data-tr="Amazon'da Mevcut">Available on Amazon</span>
         <span class="pill" data-en="AI-Assisted Design" data-tr="Yapay Zeka Destekli Tasarım">AI-Assisted Design</span>
       </div>
     </div>
@@ -592,11 +560,13 @@
   <div class="cards fade-up">
     <div class="card">
       <div class="card-icon">🎨</div>
-      <div class="card-title" data-en="Coloring Book Collection" data-tr="Boyama Kitabı Koleksiyonu">Coloring Book Collection</div>
-      <p class="card-desc" data-en="A growing series of beautifully illustrated AI-assisted coloring books, available on Google Play Books. Designs for children and adults alike." data-tr="Google Play Books'ta yer alan, yapay zeka destekli illüstrasyonlarla hazırlanmış büyüyen bir boyama kitabı serisi. Çocuklar ve yetişkinler için tasarımlar.">
-        A growing series of beautifully illustrated AI-assisted coloring books, available on Google Play Books. Designs for children and adults alike.
+      <div class="card-title">Kawaii Animals Coloring Book</div>
+      <p class="card-desc" data-en="A delightful coloring book for kids ages 3–6, featuring 50 cute pets and wild animals — the first title in our growing collection." data-tr="3–6 yaş arası çocuklar için tasarlanmış, 50 sevimli evcil ve vahşi hayvan içeren keyifli bir boyama kitabı — büyüyen koleksiyonumuzun ilk eseri.">
+        A delightful coloring book for kids ages 3–6, featuring 50 cute pets and wild animals — the first title in our growing collection.
       </p>
-      <span class="card-badge badge-live" data-en="Available on Google Play Books" data-tr="Google Play Books'ta Mevcut">Available on Google Play Books</span>
+      <a href="https://www.amazon.com/dp/B0GZFHBQS3" target="_blank" rel="noopener" style="display:inline-block; margin-top:14px; text-decoration:none;">
+        <span class="card-badge badge-live" data-en="Available on Amazon →" data-tr="Amazon'da Mevcut →">Available on Amazon →</span>
+      </a>
     </div>
 
     <div class="card">
