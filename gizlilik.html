@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gizlilik Politikası — Defnolia Studios</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sage:    #7a9e7e;
+      --sage-d:  #4d7353;
+      --terra:   #c47c5a;
+      --cream:   #f7f2ea;
+      --warm:    #ede5d8;
+      --text:    #2c2418;
+      --muted:   #7a6e62;
+      --border:  rgba(122,158,126,0.25);
+      --leaf:    #a8c5a2;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247,242,234,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-icon { width: 32px; height: 32px; }
+
+    .logo-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--sage-d);
+    }
+
+    .back-link {
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-d); }
+
+    .page-hero {
+      background: linear-gradient(135deg, var(--warm) 0%, var(--cream) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 56px 28px 44px;
+      text-align: center;
+    }
+
+    .page-tag {
+      display: inline-block;
+      background: var(--leaf);
+      color: var(--sage-d);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .page-subtitle { font-size: 0.9rem; color: var(--muted); }
+
+    .content-wrap {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 52px 28px 80px;
+    }
+
+    .info-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 22px;
+      margin-bottom: 40px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .info-bar span { display: flex; align-items: center; gap: 6px; }
+    .info-bar strong { color: var(--text); }
+
+    section { margin-bottom: 36px; }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--sage-d);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    p {
+      font-size: 0.93rem;
+      line-height: 1.85;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 10px 0;
+    }
+
+    ul li {
+      font-size: 0.93rem;
+      line-height: 1.85;
+      color: var(--muted);
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 4px;
+    }
+
+    ul li::before {
+      content: '·';
+      position: absolute;
+      left: 6px;
+      color: var(--sage);
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    strong { color: var(--text); font-weight: 500; }
+    a { color: var(--sage-d); }
+
+    .highlight-box {
+      background: rgba(168,197,162,0.15);
+      border-left: 3px solid var(--sage);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--text);
+    }
+
+    .admob-box {
+      background: rgba(196,124,90,0.08);
+      border: 1px solid rgba(196,124,90,0.25);
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin: 16px 0;
+      font-size: 0.88rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .admob-box strong { color: var(--terra); }
+
+    .contact-box {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .contact-box h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .contact-box p { margin-bottom: 18px; }
+
+    .contact-btn {
+      display: inline-block;
+      background: var(--sage-d);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .contact-btn:hover { background: var(--terra); color: #fff; }
+
+    footer {
+      text-align: center;
+      padding: 28px;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    footer a { color: var(--sage-d); text-decoration: none; margin: 0 10px; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .content-wrap { padding: 36px 20px 60px; }
+      .page-hero { padding: 40px 20px 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="logo.png" alt="Defnolia Studios" class="logo-icon">
+        <span class="logo-name">Defnolia Studios</span>
+      </a>
+      <a href="/" class="back-link">← Ana Sayfa</a>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="page-tag">Yasal Bilgi</div>
+    <h1 class="page-title">Gizlilik Politikası</h1>
+    <p class="page-subtitle">Regl Takvimi — Defnolia Studios</p>
+  </div>
+
+  <div class="content-wrap">
+
+    <div class="info-bar">
+      <span>📅 <strong>Son güncelleme:</strong> Mayıs 2025</span>
+      <span>📱 <strong>Uygulama:</strong> Regl Takvimi (Android)</span>
+      <span>🏢 <strong>Geliştirici:</strong> Defnolia Studios</span>
+    </div>
+
+    <section>
+      <h2>1. Genel Bakış</h2>
+      <p>Bu gizlilik politikası, <strong>Defnolia Studios</strong> tarafından geliştirilen <strong>Regl Takvimi</strong> Android uygulamasının kişisel verilerinizi nasıl işlediğini açıklamaktadır.</p>
+      <div class="highlight-box">
+        🔒 <strong>Temel ilkemiz:</strong> Sağlık verileriniz (regl tarihleri) yalnızca cihazınızda saklanır, hiçbir sunucuya gönderilmez ve hiçbir üçüncü tarafla paylaşılmaz.
+      </div>
+    </section>
+
+    <section>
+      <h2>2. Topladığımız Veriler</h2>
+      <p><strong>Sizin girdiğiniz veriler (yalnızca cihazınızda):</strong></p>
+      <ul>
+        <li>Regl başlangıç ve bitiş tarihleri</li>
+        <li>Döngü süresi tercihi</li>
+        <li>Regl süresi tercihi</li>
+      </ul>
+      <p><strong>Otomatik olarak işlenen teknik veriler (AdMob):</strong></p>
+      <ul>
+        <li>Reklam kimliği (Google Advertising ID / GAID)</li>
+        <li>Cihaz modeli ve işletim sistemi sürümü</li>
+        <li>Yaklaşık konum (IP adresinden)</li>
+        <li>Reklam etkileşim verileri</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. Verilerin Kullanım Amacı</h2>
+      <ul>
+        <li>Regl döngüsünü takip etmek ve tahmin sunmak</li>
+        <li>İstatistiksel analiz ve geçmiş döngü görüntüleme</li>
+        <li>Uygulamanın ücretsiz sunulabilmesi için reklam gösterimi</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Veri Depolama ve Güvenlik</h2>
+      <p>Regl tarihleriniz ve uygulama ayarlarınız <strong>yalnızca cihazınızın yerel depolama alanında</strong> saklanır (Android SharedPreferences). Bu alan Android'in uygulama sandbox sistemi tarafından korunmakta olup diğer uygulamalar tarafından erişilemez.</p>
+      <p>Verileriniz <strong>herhangi bir sunucuya gönderilmez, bulut sistemlerinde depolanmaz.</strong> Uygulamayı sildiğinizde tüm verileriniz otomatik olarak silinir.</p>
+    </section>
+
+    <section>
+      <h2>5. Google AdMob ve Üçüncü Taraf Reklamlar</h2>
+      <div class="admob-box">
+        <strong>Google AdMob</strong> hakkında bilmeniz gerekenler:<br><br>
+        Uygulama, ücretsiz sunulabilmek için Google AdMob reklam hizmetini kullanmaktadır. AdMob, kişiselleştirilmiş reklam gösterebilmek için cihaz kimliği ve teknik bilgileri işleyebilir.<br><br>
+        • Bu veriler sağlık verilerinizi içermez<br>
+        • AdMob, regl tarihlerinize erişemez<br>
+        • Google'ın gizlilik politikası: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a><br>
+        • Reklam kişiselleştirmeyi kapatmak için: <em>Android Ayarlar → Google → Reklamlar → Reklam Kişiselleştirmeyi Sınırla</em>
+      </div>
+    </section>
+
+    <section>
+      <h2>6. Çocukların Gizliliği</h2>
+      <p>Regl Takvimi uygulaması <strong>13 yaşın altındaki çocuklara yönelik değildir.</strong> 13 yaşından küçük kullanıcılara ait olduğunu bildiğimiz kişisel verileri kasıtlı olarak toplamıyoruz.</p>
+    </section>
+
+    <section>
+      <h2>7. Kullanıcı Hakları</h2>
+      <p>KVKK kapsamındaki haklarınızı kullanmak için <a href="/kvkk.html">KVKK Aydınlatma Metni</a> sayfamızı inceleyebilir ve iletişim formumuza başvurabilirsiniz.</p>
+      <ul>
+        <li><strong>Verilerinizi silin:</strong> Uygulama içi "Tüm Verileri Sil" seçeneği veya uygulamayı kaldırın</li>
+        <li><strong>Reklam kişiselleştirme:</strong> Android cihaz ayarlarından sınırlandırabilirsiniz</li>
+        <li><strong>KVKK başvurusu:</strong> İletişim formumuz aracılığıyla</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>8. Politika Değişiklikleri</h2>
+      <p>Bu gizlilik politikası zaman zaman güncellenebilir. Önemli değişiklikler uygulama güncellemeleri aracılığıyla kullanıcılara duyurulur. Sayfanın üst kısmındaki "Son güncelleme" tarihi her zaman güncel versiyonu gösterir.</p>
+    </section>
+
+    <div class="contact-box">
+      <h3>Sorularınız mı var?</h3>
+      <p>Gizlilik politikamız veya verileriniz hakkındaki sorularınız için iletişim formumuzdan bize ulaşabilirsiniz.</p>
+      <a href="/#contact" class="contact-btn">İletişim Formuna Git →</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2025 Defnolia Studios &nbsp;·&nbsp;
+      <a href="/">Ana Sayfa</a>
+      <a href="/kvkk.html">KVKK</a>
+      <a href="/gizlilik.html">Gizlilik Politikası</a>
+    </p>
+  </footer>
+
+</body>
+</html>
