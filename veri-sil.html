@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Veri Silme Talebi — Döngü / Defnolia Studios</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sage:    #7a9e7e;
+      --sage-d:  #4d7353;
+      --terra:   #c47c5a;
+      --cream:   #f7f2ea;
+      --warm:    #ede5d8;
+      --text:    #2c2418;
+      --muted:   #7a6e62;
+      --border:  rgba(122,158,126,0.25);
+      --leaf:    #a8c5a2;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247,242,234,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-icon { width: 32px; height: 32px; }
+
+    .logo-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--sage-d);
+    }
+
+    .back-link {
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-d); }
+
+    .page-hero {
+      background: linear-gradient(135deg, var(--warm) 0%, var(--cream) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 56px 28px 44px;
+      text-align: center;
+    }
+
+    .page-tag {
+      display: inline-block;
+      background: var(--leaf);
+      color: var(--sage-d);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .page-subtitle { font-size: 0.9rem; color: var(--muted); }
+
+    .content-wrap {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 52px 28px 80px;
+    }
+
+    section { margin-bottom: 36px; }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--sage-d);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    p {
+      font-size: 0.93rem;
+      line-height: 1.85;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    strong { color: var(--text); font-weight: 500; }
+    a { color: var(--sage-d); }
+
+    /* Adım kutuları */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 20px 0;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background: var(--sage-d);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .step-text {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .step-text strong { color: var(--text); }
+
+    .highlight-box {
+      background: rgba(168,197,162,0.15);
+      border-left: 3px solid var(--sage);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--text);
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin: 16px 0;
+    }
+
+    .data-table th {
+      background: var(--warm);
+      color: var(--text);
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 500;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+    }
+
+    .data-table td {
+      padding: 10px 14px;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      line-height: 1.6;
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+
+    .badge-green { background: rgba(168,197,162,0.3); color: var(--sage-d); }
+    .badge-orange { background: rgba(196,124,90,0.15); color: var(--terra); }
+
+    .contact-box {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .contact-box h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .contact-box p { margin-bottom: 18px; }
+
+    .contact-btn {
+      display: inline-block;
+      background: var(--sage-d);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .contact-btn:hover { background: var(--terra); color: #fff; }
+
+    footer {
+      text-align: center;
+      padding: 28px;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    footer a { color: var(--sage-d); text-decoration: none; margin: 0 10px; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .content-wrap { padding: 36px 20px 60px; }
+      .page-hero { padding: 40px 20px 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="logo.png" alt="Defnolia Studios" class="logo-icon">
+        <span class="logo-name">Defnolia Studios</span>
+      </a>
+      <a href="/" class="back-link">← Ana Sayfa</a>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="page-tag">Veri Hakları</div>
+    <h1 class="page-title">Veri Silme Talebi</h1>
+    <p class="page-subtitle">Döngü uygulaması — Defnolia Studios</p>
+  </div>
+
+  <div class="content-wrap">
+
+    <section>
+      <h2>Verilerinizi Nasıl Silebilirsiniz?</h2>
+      <p>
+        <strong>Döngü</strong> uygulamasındaki tüm verileriniz yalnızca cihazınızda saklanır.
+        Verilerinizi silmek için aşağıdaki yöntemlerden birini kullanabilirsiniz:
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-text">
+            <strong>Uygulama içinden anında silme (Önerilen)</strong><br>
+            Döngü uygulamasını açın → Sağ üst köşedeki <strong>⚙ Ayarlar</strong> butonuna dokunun →
+            Sayfanın alt kısmındaki <strong>"Tüm Verileri Sil"</strong> seçeneğine dokunun →
+            Onay ekranında <strong>"Tümünü Sil"</strong> butonuna basın.
+            Tüm regl kayıtlarınız ve ayarlarınız <strong>anında ve kalıcı olarak</strong> silinir.
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-text">
+            <strong>Uygulamayı kaldırma</strong><br>
+            Döngü uygulamasını cihazınızdan kaldırdığınızda (uninstall) tüm verileriniz
+            Android sistemi tarafından <strong>otomatik olarak silinir</strong>. Herhangi bir ek adım gerekmez.
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-text">
+            <strong>E-posta ile silme talebi</strong><br>
+            Yukarıdaki yöntemleri kullanamıyorsanız
+            <a href="mailto:feridepinartuna@gmail.com">feridepinartuna@gmail.com</a> adresine
+            e-posta gönderin. Talebiniz <strong>en geç 30 gün</strong> içinde yanıtlanır.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Hangi Veriler Silinir?</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Veri Türü</th>
+            <th>Nerede Saklanır</th>
+            <th>Silme Durumu</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Regl başlangıç ve bitiş tarihleri</td>
+            <td>Yalnızca cihazınız</td>
+            <td><span class="badge badge-green">Anında silinir</span></td>
+          </tr>
+          <tr>
+            <td>Döngü ve regl süresi ayarları</td>
+            <td>Yalnızca cihazınız</td>
+            <td><span class="badge badge-green">Anında silinir</span></td>
+          </tr>
+          <tr>
+            <td>Reklam kimliği (GAID) — AdMob</td>
+            <td>Google sunucuları</td>
+            <td><span class="badge badge-orange">Google politikasına tabidir</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="highlight-box">
+        🔒 Sağlık verileriniz (regl tarihleri) sunucularımızda <strong>hiç saklanmaz</strong>.
+        Bu nedenle sağlık verileriniz için ek bir sunucu silme işlemi gerekmez —
+        yalnızca cihazınızdaki veriler silinir.
+      </div>
+
+      <p>
+        Google AdMob tarafından işlenen reklam verileri için
+        Android cihazınızda <strong>Ayarlar → Google → Reklamlar → Reklam Kimliğini Sıfırla veya Sil</strong>
+        seçeneğini kullanabilir ya da
+        <a href="https://policies.google.com/technologies/ads" target="_blank">Google'ın reklam gizlilik sayfasını</a> ziyaret edebilirsiniz.
+      </p>
+    </section>
+
+    <section>
+      <h2>Ek Saklama Süreleri</h2>
+      <p>Defnolia Studios, sağlık verilerinizi hiçbir sunucuda saklamadığından ek bir saklama süresi uygulanmamaktadır. Verilerinizi cihazınızdan sildiğiniz anda tüm sağlık verileri <strong>kalıcı olarak</strong> yok edilir ve kurtarılamaz.</p>
+    </section>
+
+    <div class="contact-box">
+      <h3>Yardıma mı İhtiyacınız Var?</h3>
+      <p>Veri silme süreciyle ilgili sorularınız için bize ulaşabilirsiniz. Talebiniz en geç 30 gün içinde yanıtlanır.</p>
+      <a href="mailto:feridepinartuna@gmail.com" class="contact-btn">feridepinartuna@gmail.com →</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2025 Defnolia Studios &nbsp;·&nbsp;
+      <a href="/">Ana Sayfa</a>
+      <a href="/kvkk.html">KVKK</a>
+      <a href="/gizlilik.html">Gizlilik Politikası</a>
+    </p>
+  </footer>
+
+</body>
+</html>
