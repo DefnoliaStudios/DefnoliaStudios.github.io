@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gizlilik Politikası — I Ching / Defnolia Studios</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sage:    #7a9e7e;
+      --sage-d:  #4d7353;
+      --terra:   #c47c5a;
+      --cream:   #f7f2ea;
+      --warm:    #ede5d8;
+      --text:    #2c2418;
+      --muted:   #7a6e62;
+      --border:  rgba(122,158,126,0.25);
+      --leaf:    #a8c5a2;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247,242,234,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-icon { width: 32px; height: 32px; }
+
+    .logo-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--sage-d);
+    }
+
+    .back-link {
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-d); }
+
+    .page-hero {
+      background: linear-gradient(135deg, var(--warm) 0%, var(--cream) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 56px 28px 44px;
+      text-align: center;
+    }
+
+    .page-tag {
+      display: inline-block;
+      background: var(--leaf);
+      color: var(--sage-d);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .page-subtitle { font-size: 0.9rem; color: var(--muted); }
+
+    .content-wrap {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 52px 28px 80px;
+    }
+
+    .info-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 22px;
+      margin-bottom: 40px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .info-bar span { display: flex; align-items: center; gap: 6px; }
+    .info-bar strong { color: var(--text); }
+
+    section { margin-bottom: 36px; }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--sage-d);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    p {
+      font-size: 0.93rem;
+      line-height: 1.85;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 10px 0;
+    }
+
+    ul li {
+      font-size: 0.93rem;
+      line-height: 1.85;
+      color: var(--muted);
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 4px;
+    }
+
+    ul li::before {
+      content: '·';
+      position: absolute;
+      left: 6px;
+      color: var(--sage);
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    strong { color: var(--text); font-weight: 500; }
+    a { color: var(--sage-d); }
+
+    .highlight-box {
+      background: rgba(168,197,162,0.15);
+      border-left: 3px solid var(--sage);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--text);
+    }
+
+    .admob-box {
+      background: rgba(196,124,90,0.08);
+      border: 1px solid rgba(196,124,90,0.25);
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin: 16px 0;
+      font-size: 0.88rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .admob-box strong { color: var(--terra); }
+
+    .contact-box {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .contact-box h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .contact-box p { margin-bottom: 18px; }
+
+    .contact-btn {
+      display: inline-block;
+      background: var(--sage-d);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .contact-btn:hover { background: var(--terra); color: #fff; }
+
+    footer {
+      text-align: center;
+      padding: 28px;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    footer a { color: var(--sage-d); text-decoration: none; margin: 0 10px; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .content-wrap { padding: 36px 20px 60px; }
+      .page-hero { padding: 40px 20px 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="logo.png" alt="Defnolia Studios" class="logo-icon">
+        <span class="logo-name">Defnolia Studios</span>
+      </a>
+      <a href="/" class="back-link">← Ana Sayfa</a>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="page-tag">Yasal Bilgi</div>
+    <h1 class="page-title">Gizlilik Politikas&#305;</h1>
+    <p class="page-subtitle">I Ching &#8212; De&#287;i&#351;imler Kitab&#305; · Defnolia Studios</p>
+  </div>
+
+  <div class="content-wrap">
+
+    <div class="info-bar">
+      <span>📅 <strong>Son g&#252;ncelleme:</strong> May&#305;s 2025</span>
+      <span>📱 <strong>Uygulama:</strong> I Ching &#8212; De&#287;i&#351;imler Kitab&#305; (Android)</span>
+      <span>🏢 <strong>Geli&#351;tirici:</strong> Defnolia Studios</span>
+    </div>
+
+    <section>
+      <h2>1. Genel Bak&#305;&#351;</h2>
+      <p>Bu gizlilik politikas&#305;, <strong>Defnolia Studios</strong> taraf&#305;ndan geli&#351;tirilen <strong>I Ching &#8212; De&#287;i&#351;imler Kitab&#305;</strong> Android uygulamas&#305;n&#305;n ki&#351;isel verilerinizi nas&#305;l i&#351;ledi&#287;ini a&#231;&#305;klamaktad&#305;r.</p>
+      <div class="highlight-box">
+        🔒 <strong>Temel ilkemiz:</strong> Dan&#305;&#351;ma ge&#231;mi&#351;iniz yaln&#305;zca cihaz&#305;n&#305;zda saklan&#305;r, hi&#231;bir sunucuya g&#246;nderilmez ve hi&#231;bir &#252;&#231;&#252;nc&#252; tarafla payla&#351;&#305;lmaz.
+      </div>
+    </section>
+
+    <section>
+      <h2>2. Toplad&#305;&#287;&#305;m&#305;z Veriler</h2>
+      <p><strong>Cihaz&#305;n&#305;zda yerel olarak saklanan veriler:</strong></p>
+      <ul>
+        <li>Dan&#305;&#351;ma ge&#231;mi&#351;i (hexagram sonu&#231;lar&#305; ve yorumlar&#305;)</li>
+        <li>Dil tercihi (T&#252;rk&#231;e / &#304;ngilizce / Almanca / Frans&#305;zca)</li>
+        <li>Reklamlar&#305; kald&#305;rma sat&#305;n alma durumu</li>
+        <li>Ses ve rit&#252;el g&#246;sterim tercihleri</li>
+      </ul>
+      <p><strong>Otomatik olarak i&#351;lenen teknik veriler (AdMob):</strong></p>
+      <ul>
+        <li>Reklam kimli&#287;i (Google Advertising ID / GAID)</li>
+        <li>Cihaz modeli ve i&#351;letim sistemi s&#252;r&#252;m&#252;</li>
+        <li>Yakla&#351;&#305;k konum (IP adresinden)</li>
+        <li>Reklam etkile&#351;im verileri</li>
+      </ul>
+      <p><strong>Uygulama i&#231;i sat&#305;n alma (Google Play):</strong></p>
+      <ul>
+        <li>Sat&#305;n alma i&#351;lemleri Google Play altyap&#305;s&#305; &#252;zerinden ger&#231;ekle&#351;ir; &#246;deme bilgilerinize Defnolia Studios eri&#351;emez.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. Verilerin Kullan&#305;m Amac&#305;</h2>
+      <ul>
+        <li>Hexagram dan&#305;&#351;ma ge&#231;mi&#351;ini g&#246;r&#252;nt&#252;lemek</li>
+        <li>Dil ve uygulama tercihlerini hat&#305;rlamak</li>
+        <li>Uygulaman&#305;n &#252;cretsiz sunulabilmesi i&#231;in reklam g&#246;sterimi</li>
+        <li>Reklams&#305;z deneyim i&#231;in sat&#305;n alma durumunu do&#287;rulamak</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Veri Depolama ve G&#252;venlik</h2>
+      <p>Dan&#305;&#351;ma ge&#231;mi&#351;iniz ve uygulama ayarlar&#305;n&#305;z <strong>yaln&#305;zca cihaz&#305;n&#305;z&#305;n yerel depolama alan&#305;nda</strong> saklan&#305;r (Android SharedPreferences / localStorage). Bu alan Android&#8217;in uygulama sandbox sistemi taraf&#305;ndan korunmakta olup di&#287;er uygulamalar taraf&#305;ndan eri&#351;ilemez.</p>
+      <p>Verileriniz <strong>herhangi bir sunucuya g&#246;nderilmez, bulut sistemlerinde depolanmaz.</strong> Uygulama kald&#305;r&#305;ld&#305;&#287;&#305;nda t&#252;m verileriniz otomatik olarak silinir.</p>
+    </section>
+
+    <section>
+      <h2>5. Google AdMob ve &#220;&#231;&#252;nc&#252; Taraf Reklamlar</h2>
+      <div class="admob-box">
+        <strong>Google AdMob</strong> hakk&#305;nda bilmeniz gerekenler:<br><br>
+        Uygulama, &#252;cretsiz sunulabilmek i&#231;in Google AdMob reklam hizmetini kullanmaktad&#305;r. AdMob, ki&#351;iselle&#351;tirilmi&#351; reklam g&#246;sterebilmek i&#231;in cihaz kimli&#287;i ve teknik bilgileri i&#351;leyebilir.<br><br>
+        &#8226; Bu veriler dan&#305;&#351;ma ge&#231;mi&#351;inizi i&#231;ermez<br>
+        &#8226; AdMob, hexagram sonu&#231;lar&#305;n&#305;za eri&#351;emez<br>
+        &#8226; Google&#8217;&#305;n gizlilik politikas&#305;: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a><br>
+        &#8226; Reklam ki&#351;iselle&#351;tirmeyi kapatmak i&#231;in: <em>Android Ayarlar → Google → Reklamlar → Reklam Ki&#351;iselle&#351;tirmeyi S&#305;n&#305;rla</em>
+      </div>
+    </section>
+
+    <section>
+      <h2>6. &#199;ocuklar&#305;n Gizlili&#287;i</h2>
+      <p>I Ching &#8212; De&#287;i&#351;imler Kitab&#305;, felsefi ve spirity&#252;el i&#231;erik sunmaktad&#305;r; <strong>13 ya&#351;&#305;n alt&#305;ndaki &#231;ocuklara y&#246;nelik de&#287;ildir.</strong> 13 ya&#351;&#305;ndan k&#252;&#231;&#252;k kullan&#305;c&#305;lara ait oldu&#287;unu bildi&#287;imiz ki&#351;isel verileri kas&#305;tl&#305; olarak toplam&#305;yoruz.</p>
+    </section>
+
+    <section>
+      <h2>7. Kullan&#305;c&#305; Haklar&#305;</h2>
+      <ul>
+        <li><strong>Dan&#305;&#351;ma ge&#231;mi&#351;inizi silin:</strong> Uygulama i&#231;i &#8220;Ge&#231;mi&#351;i Sil&#8221; se&#231;ene&#287;ini kullanabilirsiniz</li>
+        <li><strong>T&#252;m verileri silin:</strong> Uygulama kald&#305;r&#305;ld&#305;&#287;&#305;nda t&#252;m yerel veriler silinir</li>
+        <li><strong>Reklam ki&#351;iselle&#351;tirme:</strong> Android cihaz ayarlar&#305;ndan s&#305;n&#305;rland&#305;rabilirsiniz</li>
+        <li><strong>Veri silme talebi:</strong> <a href="/veri-sil-iching.html">Veri Silme</a> sayfam&#305;z&#305; inceleyin</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>8. Politika De&#287;i&#351;iklikleri</h2>
+      <p>Bu gizlilik politikas&#305; zaman zaman g&#252;ncellenebilir. &#214;nemli de&#287;i&#351;iklikler uygulama g&#252;ncellemeleri arac&#305;l&#305;&#287;&#305;yla kullan&#305;c&#305;lara duyurulur. Sayfan&#305;n &#252;st k&#305;sm&#305;ndaki &#8220;Son g&#252;ncelleme&#8221; tarihi her zaman g&#252;ncel versiyonu g&#246;sterir.</p>
+    </section>
+
+    <div class="contact-box">
+      <h3>Sorular&#305;n&#305;z m&#305; var?</h3>
+      <p>Gizlilik politikam&#305;z veya verileriniz hakk&#305;ndaki sorular&#305;n&#305;z i&#231;in bize ula&#351;abilirsiniz.</p>
+      <a href="mailto:feridepinartuna@gmail.com" class="contact-btn">feridepinartuna@gmail.com →</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2025 Defnolia Studios &nbsp;·&nbsp;
+      <a href="/">Ana Sayfa</a>
+      <a href="/kvkk.html">KVKK</a>
+      <a href="/gizlilik.html">Gizlilik (D&#246;ng&#252;)</a>
+      <a href="/gizlilik-iching.html">Gizlilik (I Ching)</a>
+    </p>
+  </footer>
+
+</body>
+</html>
