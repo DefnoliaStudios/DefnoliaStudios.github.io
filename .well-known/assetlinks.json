@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.defnoliastudios.omadium",
+    "sha256_cert_fingerprints": ["4A:05:25:34:4F:25:1C:DB:B3:25:4F:BE:94:70:9C:EE:54:B5:6F:CD:16:E6:C1:EF:DE:E1:12:CC:77:37:65:42"]
+  }
+}]

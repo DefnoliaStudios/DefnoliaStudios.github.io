@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Arka plan -->
+  <rect width="512" height="512" rx="96" fill="#0A0A0F"/>
+  <!-- Gradient halka -->
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D4FF"/>
+      <stop offset="100%" stop-color="#7B5EA7"/>
+    </linearGradient>
+  </defs>
+  <circle cx="256" cy="256" r="200" fill="none" stroke="url(#g)" stroke-width="18"/>
+  <!-- Saat kadranı -->
+  <circle cx="256" cy="256" r="8" fill="#00D4FF"/>
+  <!-- Akrep (saat) -->
+  <line x1="256" y1="256" x2="256" y2="140" stroke="#00D4FF" stroke-width="14" stroke-linecap="round"/>
+  <!-- Yelkovan (dakika) -->
+  <line x1="256" y1="256" x2="330" y2="200" stroke="#7B5EA7" stroke-width="10" stroke-linecap="round"/>
+  <!-- Küçük noktalar -->
+  <circle cx="256" cy="96" r="6" fill="#333"/>
+  <circle cx="416" cy="256" r="6" fill="#333"/>
+  <circle cx="256" cy="416" r="6" fill="#333"/>
+  <circle cx="96" cy="256" r="6" fill="#333"/>
+</svg>

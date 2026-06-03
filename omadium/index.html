@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#0A0A0F">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Omadium</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html,body{background:#0A0A0F;height:100%;overscroll-behavior:none;}
+    body{-webkit-tap-highlight-color:transparent;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;}
+    #root{min-height:100vh;min-height:100dvh;padding-top:env(safe-area-inset-top,0px);}
+    #splash{position:fixed;inset:0;background:#0A0A0F;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;gap:14px;font-family:'Courier New',monospace;transition:opacity .35s ease;}
+    #splash.hide{opacity:0;pointer-events:none;}
+    #si{font-size:60px;animation:p 2s infinite;}@keyframes p{0%,100%{opacity:1}50%{opacity:.5}}
+    #st{color:#00D4FF;font-size:20px;font-weight:700;letter-spacing:2px;text-align:center;}
+  </style>
+</head>
+<body>
+  <div id="splash"><div id="si">⏱</div><div id="st">OMADIUM</div></div>
+  <div id="root"></div>
+  <script src="app.js"></script>
+  <script>
+    // İlk render sonrası splash'ı kapat
+    (function(){
+      var tries=0;
+      var iv=setInterval(function(){
+        var r=document.getElementById('root');
+        if((r&&r.children.length>0)||tries++>60){
+          clearInterval(iv);
+          var s=document.getElementById('splash');
+          if(s){s.classList.add('hide');setTimeout(function(){s.remove();},400);}
+        }
+      },50);
+    })();
+    if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});}
+  </script>
+</body>
+</html>
