@@ -1,23 +1,80 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <!-- Arka plan -->
-  <rect width="512" height="512" rx="96" fill="#0A0A0F"/>
-  <!-- Gradient halka -->
   <defs>
-    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00D4FF"/>
-      <stop offset="100%" stop-color="#7B5EA7"/>
+    <linearGradient id="mainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00D4FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7B5EA7;stop-opacity:1" />
     </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF6B9D;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#FFD700;stop-opacity:0.8" />
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+      .rotating { animation: rotate 20s linear infinite; transform-origin: 256px 256px; }
+    </style>
   </defs>
-  <circle cx="256" cy="256" r="200" fill="none" stroke="url(#g)" stroke-width="18"/>
-  <!-- Saat kadranı -->
-  <circle cx="256" cy="256" r="8" fill="#00D4FF"/>
-  <!-- Akrep (saat) -->
-  <line x1="256" y1="256" x2="256" y2="140" stroke="#00D4FF" stroke-width="14" stroke-linecap="round"/>
-  <!-- Yelkovan (dakika) -->
-  <line x1="256" y1="256" x2="330" y2="200" stroke="#7B5EA7" stroke-width="10" stroke-linecap="round"/>
-  <!-- Küçük noktalar -->
-  <circle cx="256" cy="96" r="6" fill="#333"/>
-  <circle cx="416" cy="256" r="6" fill="#333"/>
-  <circle cx="256" cy="416" r="6" fill="#333"/>
-  <circle cx="96" cy="256" r="6" fill="#333"/>
+
+  <!-- Arka plan — koyu tema -->
+  <rect width="512" height="512" rx="96" fill="#0A0A0F"/>
+
+  <!-- Dış halka — ana gradyan (dekoratif) -->
+  <circle cx="256" cy="256" r="238" fill="none" stroke="url(#mainGrad)" stroke-width="12" opacity="0.6"/>
+
+  <!-- İç halka — vurgu gradyanı -->
+  <circle cx="256" cy="256" r="210" fill="none" stroke="url(#accentGrad)" stroke-width="6" opacity="0.5"/>
+
+  <!-- Merkez daire — kontrastlı arka plan -->
+  <circle cx="256" cy="256" r="190" fill="#0F0F1A"/>
+
+  <!-- Saat halkası — keskin kenarlar -->
+  <circle cx="256" cy="256" r="185" fill="none" stroke="#00D4FF" stroke-width="3" opacity="0.7"/>
+
+  <!-- Saat işaretleri — 12, 3, 6, 9 konumları -->
+  <!-- 12 -->
+  <line x1="256" y1="85" x2="256" y2="110" stroke="#00D4FF" stroke-width="5" stroke-linecap="round" opacity="0.9"/>
+  <!-- 3 -->
+  <line x1="427" y1="256" x2="402" y2="256" stroke="#7B5EA7" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
+  <!-- 6 -->
+  <line x1="256" y1="427" x2="256" y2="402" stroke="#FFD700" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+  <!-- 9 -->
+  <line x1="85" y1="256" x2="110" y2="256" stroke="#FF6B9D" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+
+  <!-- Saat ibresi 1 — başlangıç (12 o'clock konumundan başlayıp 9 o'clock'a) -->
+  <line x1="256" y1="256" x2="256" y2="110" stroke="#00D4FF" stroke-width="10" stroke-linecap="round" opacity="0.95" filter="url(#glow)"/>
+
+  <!-- Saat ibresi 2 — oruç süresi (3 o'clock konumundan başlayıp 5 o'clock'a) -->
+  <line x1="256" y1="256" x2="360" y2="320" stroke="#7B5EA7" stroke-width="8" stroke-linecap="round" opacity="0.85"/>
+
+  <!-- Merkez nokta — büyütülmüş -->
+  <circle cx="256" cy="256" r="12" fill="#00D4FF" filter="url(#glow)"/>
+  <circle cx="256" cy="256" r="8" fill="#7B5EA7" opacity="0.6"/>
+
+  <!-- Dekoratif puls halkaları (arka planda) -->
+  <circle cx="256" cy="256" r="200" fill="none" stroke="#00D4FF" stroke-width="1" opacity="0.15"/>
+  <circle cx="256" cy="256" r="220" fill="none" stroke="#7B5EA7" stroke-width="1" opacity="0.1"/>
+
+  <!-- OMAD sembolü — alt ortasında (enerji göstergesi) -->
+  <g opacity="0.6">
+    <!-- Yukarı ok -->
+    <path d="M 256 360 L 250 375 M 256 360 L 262 375" fill="none" stroke="#FFD700" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Enerji dalgası -->
+    <path d="M 240 385 Q 248 378 256 385 Q 264 392 272 385" fill="none" stroke="#FF6B9D" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+  </g>
+
+  <!-- Yan dekor — hareket işareti -->
+  <g opacity="0.5">
+    <!-- Sağ üst -->
+    <circle cx="380" cy="140" r="6" fill="#FFD700"/>
+    <circle cx="400" cy="130" r="4" fill="#FFD700" opacity="0.5"/>
+    <!-- Sol alt -->
+    <circle cx="130" cy="400" r="6" fill="#FF6B9D"/>
+    <circle cx="110" cy="415" r="4" fill="#FF6B9D" opacity="0.5"/>
+  </g>
 </svg>
