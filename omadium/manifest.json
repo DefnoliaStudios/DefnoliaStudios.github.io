@@ -2,51 +2,21 @@
   "name": "Omadium – Aralıklı Oruç & Diyet",
   "short_name": "Omadium",
   "description": "Aralıklı oruç zamanlayıcı, vücut ölçüm takibi, BMR/TDEE hesaplayıcı, su takibi ve başarı sistemi. 8 dil destekli.",
-  "start_url": "/omadium/",
-  "scope": "/omadium/",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#0A0A0F",
   "theme_color": "#0A0A0F",
   "lang": "tr",
-  "categories": [
-    "health",
-    "lifestyle",
-    "fitness"
-  ],
+  "categories": ["health", "lifestyle", "fitness"],
   "screenshots": [
-    {
-      "src": "screenshot1.png",
-      "sizes": "1080x1920",
-      "type": "image/png",
-      "form_factor": "narrow"
-    }
+    { "src": "screenshot1.png", "sizes": "1080x1920", "type": "image/png", "form_factor": "narrow" }
   ],
   "icons": [
-    {
-      "src": "icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    },
-    {
-      "src": "icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "icon-maskable-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    }
-  ],
-  "id": "/omadium/"
+    { "src": "icon.svg",                "sizes": "any",     "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icon-192.png",            "sizes": "192x192", "type": "image/png",     "purpose": "any" },
+    { "src": "icon-512.png",            "sizes": "512x512", "type": "image/png",     "purpose": "any" },
+    { "src": "icon-maskable-512.png",   "sizes": "512x512", "type": "image/png",     "purpose": "maskable" }
+  ]
 }
