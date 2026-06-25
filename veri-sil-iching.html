@@ -247,7 +247,7 @@
       text-decoration: none;
       font-size: 0.82rem;
       letter-spacing: 0.06em;
-      text-transform: uppercase;
+      text-transform: none;
       padding: 12px 28px;
       border-radius: 4px;
       transition: background 0.2s;
@@ -404,7 +404,7 @@
     <div class="contact-box">
       <h3>Yard&#305;ma m&#305; &#304;htiyac&#305;n&#305;z Var?</h3>
       <p>Veri silme s&#252;reciyle ilgili sorular&#305;n&#305;z i&#231;in bize ula&#351;abilirsiniz. Talebiniz en ge&#231; 30 g&#252;n i&#231;inde yan&#305;tlan&#305;r.</p>
-      <a href="mailto:defnoliastudios@gmail.com" class="contact-btn">defnoliastudios@gmail.com →</a>
+      <span class="contact-btn" onclick="navigator.clipboard.writeText('defnoliastudios@gmail.com').then(()=>{this.textContent='Kopyalandı ✓';setTimeout(()=>{this.textContent='defnoliastudios@gmail.com — kopyala'},1500)})" style="cursor:pointer;">defnoliastudios@gmail.com — kopyala</span>
     </div>
 
   </div>

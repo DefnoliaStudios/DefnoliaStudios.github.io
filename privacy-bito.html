@@ -251,7 +251,7 @@
       text-decoration: none;
       font-size: 0.82rem;
       letter-spacing: 0.06em;
-      text-transform: uppercase;
+      text-transform: none;
       padding: 12px 28px;
       border-radius: 4px;
       transition: background 0.2s;
@@ -374,7 +374,7 @@
       <div class="contact-box">
         <h3>Sorularınız mı var?</h3>
         <p>Gizlilik politikamız hakkında sorularınız için:</p>
-        <a href="mailto:defnoliastudios@gmail.com" class="contact-btn">defnoliastudios@gmail.com →</a>
+        <span class="contact-btn" onclick="navigator.clipboard.writeText('defnoliastudios@gmail.com').then(()=>{this.textContent='Kopyalandı ✓';setTimeout(()=>{this.textContent='defnoliastudios@gmail.com — kopyala'},1500)})" style="cursor:pointer;">defnoliastudios@gmail.com — kopyala</span>
       </div>
 
     </div><!-- /lang-tr -->
@@ -447,7 +447,7 @@
       <div class="contact-box">
         <h3>Questions?</h3>
         <p>For questions about this privacy policy:</p>
-        <a href="mailto:defnoliastudios@gmail.com" class="contact-btn">defnoliastudios@gmail.com →</a>
+        <span class="contact-btn" onclick="navigator.clipboard.writeText('defnoliastudios@gmail.com').then(()=>{this.textContent='Kopyalandı ✓';setTimeout(()=>{this.textContent='defnoliastudios@gmail.com — kopyala'},1500)})" style="cursor:pointer;">defnoliastudios@gmail.com — kopyala</span>
       </div>
 
     </div><!-- /lang-en -->

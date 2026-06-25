@@ -259,7 +259,7 @@
       text-decoration: none;
       font-size: 0.82rem;
       letter-spacing: 0.06em;
-      text-transform: uppercase;
+      text-transform: none;
       padding: 12px 28px;
       border-radius: 4px;
       transition: background 0.2s;
@@ -348,7 +348,7 @@
           <div class="step-text">
             <strong>Email deletion request</strong><br>
             If you cannot use the methods above, send an email to
-            <a href="mailto:defnoliastudios@gmail.com">defnoliastudios@gmail.com</a>.
+            <a href="#" onclick="event.preventDefault();navigator.clipboard.writeText('defnoliastudios@gmail.com').then(()=>{this.textContent='Kopyalandı ✓';setTimeout(()=>{this.textContent='defnoliastudios@gmail.com'},1500)})">defnoliastudios@gmail.com</a>.
             Your request will be answered <strong>within 30 days</strong> at the latest.
           </div>
         </div>
@@ -416,7 +416,7 @@
     <div class="contact-box">
       <h3>Need Help?</h3>
       <p>You can contact us with questions about the data deletion process. Your request will be answered within 30 days at the latest.</p>
-      <a href="mailto:defnoliastudios@gmail.com" class="contact-btn">defnoliastudios@gmail.com →</a>
+      <span class="contact-btn" onclick="navigator.clipboard.writeText('defnoliastudios@gmail.com').then(()=>{this.textContent='Kopyalandı ✓';setTimeout(()=>{this.textContent='defnoliastudios@gmail.com — kopyala'},1500)})" style="cursor:pointer;">defnoliastudios@gmail.com — kopyala</span>
     </div>
 
   </div>

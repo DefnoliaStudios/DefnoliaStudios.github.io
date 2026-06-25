@@ -236,7 +236,7 @@
       text-decoration: none;
       font-size: 0.82rem;
       letter-spacing: 0.06em;
-      text-transform: uppercase;
+      text-transform: none;
       padding: 12px 28px;
       border-radius: 4px;
       transition: background 0.2s;
@@ -370,7 +370,7 @@
     <div class="contact-box">
       <h3>Have questions?</h3>
       <p>For any questions about our privacy policy or your data, please feel free to contact us.</p>
-      <a href="mailto:defnoliastudios@gmail.com" class="contact-btn">defnoliastudios@gmail.com →</a>
+      <span class="contact-btn" onclick="navigator.clipboard.writeText('defnoliastudios@gmail.com').then(()=>{this.textContent='Kopyalandı ✓';setTimeout(()=>{this.textContent='defnoliastudios@gmail.com — kopyala'},1500)})" style="cursor:pointer;">defnoliastudios@gmail.com — kopyala</span>
     </div>
 
   </div>
