@@ -1,6 +1,6 @@
 {
-  "surum": 7,
-  "guncelleme": "2026-06-04",
+  "surum": 8,
+  "guncelleme": "2026-07-11",
   "sorular": [
     {
       "no": 2,
@@ -4764,6 +4764,94 @@
       "D": "Kaza ve tesadüf",
       "dogru": "B",
       "aciklama": "TCK m.29 uyarınca haksız bir fiilden kaynaklanan hiddet veya şiddetli elemin etkisiyle suç işleyen kişi ağırlaştırılmış müebbet yerine 18-24 yıl, diğer hâllerde ise dörtte birinden dörtte üçüne kadar indirilen ceza alır. Haksız tahrikin haksız fiilin mağduruna yöneltilmesi gerekmez."
+    },
+    {
+      "no": 1184,
+      "kategori": "Anayasa Hukuku",
+      "soru": "1982 Anayasası'na göre Cumhurbaşkanı'nın yürütme yetkisine ilişkin konularda çıkardığı düzenleyici işleme ne ad verilir?",
+      "A": "Tüzük",
+      "B": "Yönetmelik",
+      "C": "Cumhurbaşkanlığı kararnamesi",
+      "D": "KHK (Kanun Hükmünde Kararname)",
+      "dogru": "C",
+      "aciklama": "Anayasa m.104/17 uyarınca Cumhurbaşkanı, yürütme yetkisine ilişkin konularda Cumhurbaşkanlığı kararnamesi çıkarabilir. Ancak Anayasa'nın ikinci kısmının birinci ve ikinci bölümlerinde yer alan temel haklar ile kişi hakları ve ödevleri, dördüncü bölümde yer alan siyasi haklar ve ödevler bu yolla düzenlenemez; aynı konuda kanun varsa kanun hükümleri uygulanır."
+    },
+    {
+      "no": 1185,
+      "kategori": "Medeni Hukuk",
+      "soru": "Türk Medeni Kanunu'na göre, yaşının küçüklüğü ya da akıl hastalığı, akıl zayıflığı, sarhoşluk gibi bir sebeple akla uygun biçimde davranma yeteneğinden yoksun olmayan herkeste bulunan niteliğe ne ad verilir?",
+      "A": "Hak ehliyeti",
+      "B": "Temyiz kudreti",
+      "C": "Fiil ehliyeti",
+      "D": "Vesayet yetkisi",
+      "dogru": "B",
+      "aciklama": "TMK m.13 uyarınca akla uygun biçimde davranma yeteneğinden yoksun olmayan herkes ayırt etme gücüne (temyiz kudretine) sahiptir. Bu, fiil ehliyetinin (TMK m.9-16) ön koşullarından biridir; doğuştan herkese tanınan hak ehliyetinden (TMK m.8) farklı olarak kişiden kişiye ve duruma göre değişebilir."
+    },
+    {
+      "no": 1186,
+      "kategori": "İcra-İflas Hukuku",
+      "soru": "İcra takibine itiraz eden borçluya karşı alacaklının, itirazın haksızlığını ispatlayarak takibin devamını sağlamak amacıyla açtığı dava türü aşağıdakilerden hangisidir?",
+      "A": "İtirazın iptali davası",
+      "B": "Menfi tespit davası",
+      "C": "İstirdat davası",
+      "D": "İstihkak davası",
+      "dogru": "A",
+      "aciklama": "İİK m.67 uyarınca borçlunun ödeme emrine itirazı üzerine duran takibin devamı için alacaklının açtığı davaya itirazın iptali davası denir. Menfi tespit davası (İİK m.72) borçlu olmadığının, istirdat davası (İİK m.72/7) fazladan ödenen paranın geri alınmasının, istihkak davası (İİK m.96 vd.) ise haczedilen malın üçüncü kişiye ait olduğunun tespitini konu alır."
+    },
+    {
+      "no": 1187,
+      "kategori": "Borçlar Hukuku",
+      "soru": "Tarafların üçüncü kişileri aldatmak amacıyla, gerçek iradelerine uymayan bir işlemi yapmış gibi görünmelerine borçlar hukukunda ne ad verilir?",
+      "A": "Hile",
+      "B": "İkrah",
+      "C": "Muvazaa",
+      "D": "Gabin",
+      "dogru": "C",
+      "aciklama": "TBK m.19 uyarınca tarafların üçüncü kişileri aldatmak amacıyla gerçek iradelerine uymayan bir görünüş yaratmalarına muvazaa denir; muvazaalı işlem taraflar arasında hüküm doğurmaz. Hile (TBK m.36) ve ikrah (TBK m.37) irade bozukluğu hâlleri, gabin (TBK m.28) ise aşırı yararlanmayı ifade eder."
+    },
+    {
+      "no": 1188,
+      "kategori": "Medeni Hukuk",
+      "soru": "Paylı mülkiyette bir paydaşın payını üçüncü bir kişiye satması hâlinde, diğer paydaşların bu payı öncelikle satın alma hakkına Türk Medeni Kanunu'nda ne ad verilir?",
+      "A": "İştira hakkı",
+      "B": "Önalım (şufa) hakkı",
+      "C": "Vazgeçme hakkı",
+      "D": "İstihkak hakkı",
+      "dogru": "B",
+      "aciklama": "TMK m.732 uyarınca paylı mülkiyette bir paydaş payını kısmen veya tamamen üçüncü kişiye satarsa, diğer paydaşlar bu payı öncelikle satın alma hakkını, yani önalım (şufa) hakkını kullanabilir. Hak dava yoluyla ve alıcıya karşı ileri sürülür."
+    },
+    {
+      "no": 1189,
+      "kategori": "Ceza Muhakemesi",
+      "soru": "Ceza Muhakemesi Kanunu'na göre soruşturma evresinde şüpheli hakkında tutuklama kararı vermeye yetkili makam aşağıdakilerden hangisidir?",
+      "A": "Cumhuriyet savcısı",
+      "B": "Kolluk amiri",
+      "C": "Sulh ceza hâkimi",
+      "D": "Ağır ceza mahkemesi başkanı",
+      "dogru": "C",
+      "aciklama": "CMK m.101 uyarınca soruşturma evresinde tutuklama kararı, Cumhuriyet savcısının istemi üzerine sulh ceza hâkimi tarafından verilir. Savcı tutuklama talep edebilir ancak bizzat tutuklama kararı veremez; kovuşturma evresinde bu yetki mahkemeye aittir."
+    },
+    {
+      "no": 1190,
+      "kategori": "İş ve Sosyal Güvenlik",
+      "soru": "Türk iş hukukunda işçinin kıdem tazminatına hak kazanabilmesi için aynı işverene bağlı olarak asgari ne kadar süre çalışmış olması gerekir?",
+      "A": "6 ay",
+      "B": "1 yıl",
+      "C": "2 yıl",
+      "D": "3 yıl",
+      "dogru": "B",
+      "aciklama": "Kıdem tazminatı 4857 sayılı İş Kanunu'nda değil, yürürlükten kaldırılan 1475 sayılı eski İş Kanunu'nun hâlâ yürürlükte tutulan 14. maddesinde düzenlenir. Bu maddeye göre işçinin kıdem tazminatına hak kazanabilmesi için iş sözleşmesinin sona erdiği tarihte işyerinde en az bir yıllık kıdeminin bulunması gerekir."
+    },
+    {
+      "no": 1191,
+      "kategori": "Ticaret Hukuku",
+      "soru": "Türk Ticaret Kanunu'na göre, düzenleyenin bizzat kendisinin belirli bir bedeli ödemeyi taahhüt ettiği kambiyo senedi türü aşağıdakilerden hangisidir?",
+      "A": "Poliçe",
+      "B": "Bono",
+      "C": "Çek",
+      "D": "Makbuz senedi",
+      "dogru": "B",
+      "aciklama": "TTK m.776 vd. uyarınca bono (emre yazılı senet), düzenleyenin bizzat kendisinin belirli bir bedeli ödemeyi taahhüt ettiği kambiyo senedidir. Poliçede (TTK m.671 vd.) düzenleyen bir başkasına ödeme emri verir; çek (TTK m.780 vd.) ise bankaya hitaben düzenlenen bir ödeme talimatıdır."
     }
   ]
 }
