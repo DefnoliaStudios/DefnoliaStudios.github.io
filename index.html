@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Defnolia Studios</title>
+  <title>Defnolia Studios · Apps & AI Solutions</title>
+  <meta name="description" content="Custom applications, digital products, and AI setup and training for law firms." />
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -335,6 +336,17 @@
     .badge-live { background: #d4edda; color: #2e7d32; }
     .badge-soon { background: var(--warm); color: var(--muted); border: 1px solid var(--border); }
 
+    /* ── SERVICES ── */
+    .service-card .card-icon {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--sage-d);
+    }
+
+    .service-card .card-title { font-size: 1.3rem; }
+    .service-card .card-desc { font-size: 0.92rem; }
+
     /* ── COMING SOON ── */
     .coming-soon {
       background: var(--warm);
@@ -413,6 +425,58 @@
 
     .contact-form button:hover { background: #b36a48; transform: translateY(-1px); }
 
+    .whatsapp-contact {
+      margin-bottom: 16px;
+      padding: 16px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 8px;
+    }
+
+    .whatsapp-number {
+      display: block;
+      margin-bottom: 10px;
+      color: #fff;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+    }
+
+    .whatsapp-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .whatsapp-link,
+    .copy-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 9px 14px;
+      border-radius: 6px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .whatsapp-link {
+      background: #25d366;
+      color: #173d24;
+      border: 1px solid #25d366;
+    }
+
+    .copy-number {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .whatsapp-link:hover,
+    .copy-number:hover { filter: brightness(1.06); }
+
     .success-msg {
       display: none;
       background: rgba(168,197,162,0.25);
@@ -484,6 +548,7 @@
       <span class="logo-name">Defnolia Studios</span>
     </a>
     <nav>
+      <a href="#services" data-en="Services" data-tr="Hizmetler">Services</a>
       <a href="#about" data-en="About" data-tr="Hakkında">About</a>
       <a href="#products" data-en="Products" data-tr="Ürünler">Products</a>
       <a href="#contact" data-en="Contact" data-tr="İletişim">Contact</a>
@@ -545,6 +610,40 @@
       <p class="section-body" style="margin-top:24px" data-en="We combine thoughtful design with the latest creative tools to bring beautiful, accessible digital books to readers worldwide." data-tr="Güzel, erişilebilir dijital kitapları dünya genelindeki okuyuculara ulaştırmak için özenli tasarımı ve en yeni yaratıcı araçları bir araya getiriyoruz.">
         We combine thoughtful design with the latest creative tools to bring beautiful, accessible digital books to readers worldwide.
       </p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="products-header fade-up">
+    <p class="section-label" data-en="Our Services" data-tr="Hizmetlerimiz">Our Services</p>
+    <h2 class="section-title" data-en="Digital solutions tailored<br>to your needs" data-tr="İhtiyacınıza özel<br>dijital çözümler">Digital solutions tailored<br>to your needs</h2>
+  </div>
+
+  <div class="cards fade-up">
+    <div class="card service-card">
+      <div class="card-icon">01</div>
+      <div class="card-title" data-en="Custom Applications" data-tr="Size Özel Uygulamalar">Custom Applications</div>
+      <p class="card-desc" data-en="We develop mobile, web, and internal applications tailored to your needs. Contact us for details." data-tr="İhtiyacınıza göre mobil, web ve ofis içi uygulamalar geliştiriyoruz. Detaylı bilgi için bize ulaşın.">
+        We develop mobile, web, and internal applications tailored to your needs. Contact us for details.
+      </p>
+      <a href="#contact" style="display:inline-block; margin-top:14px; text-decoration:none;">
+        <span class="card-badge badge-live" data-en="Contact us for details →" data-tr="Detaylı bilgi için ulaşın →">Contact us for details →</span>
+      </a>
+    </div>
+
+    <div class="card service-card">
+      <div class="card-icon">02</div>
+      <div class="card-title" data-en="AI for Law Firms" data-tr="Hukuk Büronuz İçin Yapay Zekâ">AI for Law Firms</div>
+      <p class="card-desc" data-en="We set up leading AI systems suited to your law firm. We teach you how to choose the right plan and model, use quotas efficiently, produce reports from case files quickly, and reduce errors and hallucination risks. We also help you build simple tools for your office." data-tr="Hukuk büronuza ihtiyacınıza uygun önde gelen yapay zekâ sistemlerini kuruyoruz. Doğru paket ve modeli seçmeyi, kotanızı verimli kullanmayı, dosyalarınızdan kısa sürede rapor almayı ve hata ile halüsinasyon riskini azaltmayı öğretiyoruz. Ofisiniz için basit uygulamalar geliştirmenize de yardımcı oluyoruz.">
+        We set up leading AI systems suited to your law firm. We teach you how to choose the right plan and model, use quotas efficiently, produce reports from case files quickly, and reduce errors and hallucination risks. We also help you build simple tools for your office.
+      </p>
+      <a href="#contact" style="display:inline-block; margin-top:14px; text-decoration:none;">
+        <span class="card-badge badge-live" data-en="Contact us for details →" data-tr="Detaylı bilgi için ulaşın →">Contact us for details →</span>
+      </a>
     </div>
   </div>
 </section>
@@ -649,14 +748,21 @@
     </div>
 
     <div>
+      <div class="whatsapp-contact">
+        <span class="whatsapp-number">+90 555 569 09 00</span>
+        <div class="whatsapp-actions">
+          <a class="whatsapp-link" href="https://wa.me/905555690900" target="_blank" rel="noopener" data-en="Message on WhatsApp" data-tr="WhatsApp'tan Yazın">Message on WhatsApp</a>
+          <button class="copy-number" type="button" onclick="copyWhatsappNumber(this)" data-en="Copy Number" data-tr="Numarayı Kopyala">Copy Number</button>
+        </div>
+      </div>
       <form class="contact-form" id="contactForm">
         <input type="text" id="fname" placeholder="Name / İsim" required />
         <input type="email" id="femail" placeholder="Email" required />
         <textarea id="fmsg" placeholder="Message / Mesaj" required></textarea>
-        <button type="submit" data-en="Send Message" data-tr="Mesaj Gönder">Send Message</button>
+        <button type="submit" data-en="Send via WhatsApp" data-tr="WhatsApp ile Gönder">Send via WhatsApp</button>
       </form>
-      <div class="success-msg" id="successMsg" data-en="Thank you! We'll get back to you soon." data-tr="Teşekkürler! En kısa sürede geri döneceğiz.">
-        Thank you! We'll get back to you soon.
+      <div class="success-msg" id="successMsg" data-en="Your message is ready in WhatsApp." data-tr="Mesajınız WhatsApp'ta hazırlandı.">
+        Your message is ready in WhatsApp.
       </div>
     </div>
   </div>
@@ -695,24 +801,56 @@
 
     // Update form button text
     const btn = document.querySelector('.contact-form button');
-    btn.textContent = l === 'tr' ? 'Mesaj Gönder' : 'Send Message';
+    btn.textContent = l === 'tr' ? 'WhatsApp ile Gönder' : 'Send via WhatsApp';
 
     // Update success msg
     const sm = document.getElementById('successMsg');
-    sm.textContent = l === 'tr' ? 'Teşekkürler! En kısa sürede geri döneceğiz.' : "Thank you! We'll get back to you soon.";
+    sm.textContent = l === 'tr' ? "Mesajınız WhatsApp'ta hazırlandı." : 'Your message is ready in WhatsApp.';
 
     // Update placeholders
     document.getElementById('fname').placeholder = l === 'tr' ? 'İsim' : 'Name / İsim';
     document.getElementById('fmsg').placeholder = l === 'tr' ? 'Mesaj' : 'Message / Mesaj';
   }
 
+  // ── WHATSAPP ──
+  function copyWhatsappNumber(button) {
+    const number = '+90 555 569 09 00';
+    const copiedText = lang === 'tr' ? 'Numara Kopyalandı ✓' : 'Number Copied ✓';
+    const defaultText = lang === 'tr' ? 'Numarayı Kopyala' : 'Copy Number';
+
+    const showCopied = () => {
+      button.textContent = copiedText;
+      setTimeout(() => { button.textContent = defaultText; }, 1600);
+    };
+
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(number).then(showCopied);
+      return;
+    }
+
+    const temp = document.createElement('textarea');
+    temp.value = number;
+    temp.style.position = 'fixed';
+    temp.style.opacity = '0';
+    document.body.appendChild(temp);
+    temp.select();
+    document.execCommand('copy');
+    temp.remove();
+    showCopied();
+  }
+
   // ── CONTACT FORM ──
-  // Note: Connect to Formspree after Formspree ID is obtained
-  // Replace YOUR_FORM_ID below after creating a Formspree form at formspree.io
   document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    // Temporary local submission (update with Formspree endpoint later)
-    document.getElementById('contactForm').style.display = 'none';
+    const name = document.getElementById('fname').value.trim();
+    const email = document.getElementById('femail').value.trim();
+    const message = document.getElementById('fmsg').value.trim();
+    const text = lang === 'tr'
+      ? `Merhaba, hizmetleriniz hakkında detaylı bilgi almak istiyorum.\n\nİsim: ${name}\nE-posta: ${email}\nMesaj: ${message}`
+      : `Hello, I would like more information about your services.\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`;
+    const whatsappUrl = 'https://wa.me/905555690900?text=' + encodeURIComponent(text);
+
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     document.getElementById('successMsg').style.display = 'block';
   });
 
