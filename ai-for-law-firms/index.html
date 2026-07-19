@@ -392,15 +392,15 @@
 <body>
   <header>
     <div class="header-inner">
-      <a class="logo" href="/">
+      <a class="logo" href="/?lang=en">
         <img src="/logo.png" alt="" />
         <span>Defnolia Studios</span>
       </a>
       <div class="header-actions">
-        <a class="home-link" href="/">Home</a>
+        <a class="home-link" href="/?lang=en">Home</a>
         <nav class="language-switch" aria-label="Language selection">
           <a class="active" href="/ai-for-law-firms/" lang="en" aria-current="page">EN</a>
-          <a href="/hukuk-burolari-yapay-zeka/" lang="tr">TR</a>
+          <a href="/hukuk-burolari-yapay-zeka/" lang="tr" onclick="rememberLanguagePreference('tr')">TR</a>
         </nav>
       </div>
     </div>
@@ -469,7 +469,7 @@
       <p>Use our contact form or reach us on WhatsApp to learn about the setup, training, and application options suitable for your firm.</p>
       <div class="contact-actions">
         <a class="whatsapp" href="https://wa.me/905555690900?text=Hello%2C%20I%20would%20like%20more%20information%20about%20your%20AI%20services%20for%20law%20firms." target="_blank" rel="noopener">Message Us on WhatsApp</a>
-        <a class="form-link" href="/#contact">Contact Form</a>
+        <a class="form-link" href="/?lang=en#contact">Contact Form</a>
         <button class="copy-number" type="button" onclick="copyNumber(this)">Copy Number</button>
         <span class="phone">+90 555 569 09 00</span>
       </div>
@@ -482,6 +482,14 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    function rememberLanguagePreference(language) {
+      try {
+        localStorage.setItem('defnolia-language', language);
+      } catch (error) {
+        // Navigation still works when browser storage is unavailable.
+      }
+    }
 
     function copyNumber(button) {
       const number = '+90 555 569 09 00';

@@ -398,7 +398,7 @@
       <div class="header-actions">
         <a class="home-link" href="/?lang=tr">Ana Sayfa</a>
         <nav class="language-switch" aria-label="Dil seçimi">
-          <a href="/ai-for-law-firms/" lang="en">EN</a>
+          <a href="/ai-for-law-firms/" lang="en" onclick="rememberLanguagePreference('en')">EN</a>
           <a class="active" href="/hukuk-burolari-yapay-zeka/" lang="tr" aria-current="page">TR</a>
         </nav>
       </div>
@@ -481,6 +481,14 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    function rememberLanguagePreference(language) {
+      try {
+        localStorage.setItem('defnolia-language', language);
+      } catch (error) {
+        // Navigation still works when browser storage is unavailable.
+      }
+    }
 
     function copyNumber(button) {
       const number = '+90 555 569 09 00';

@@ -555,8 +555,8 @@
       <a href="#contact" data-en="Contact" data-tr="İletişim">Contact</a>
     </nav>
     <div class="lang-toggle">
-      <button class="lang-btn active" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" onclick="setLang('tr')">TR</button>
+      <button class="lang-btn active" data-lang="en" aria-pressed="true" onclick="setLang('en', true)">EN</button>
+      <button class="lang-btn" data-lang="tr" aria-pressed="false" onclick="setLang('tr', true)">TR</button>
     </div>
   </div>
 </header>
@@ -793,9 +793,28 @@
 
   // ── LANGUAGE ──
   let lang = 'en';
+  const languageStorageKey = 'defnolia-language';
 
-  function setLang(l) {
+  function saveLanguagePreference(l) {
+    try {
+      localStorage.setItem(languageStorageKey, l);
+    } catch (error) {
+      // The site still works when browser storage is unavailable.
+    }
+  }
+
+  function getSavedLanguagePreference() {
+    try {
+      return localStorage.getItem(languageStorageKey);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function setLang(l, remember = false) {
+    if (l !== 'tr' && l !== 'en') l = 'en';
     lang = l;
+    if (remember) saveLanguagePreference(l);
     document.documentElement.lang = l;
     const pageUrl = new URL(window.location.href);
     if (l === 'tr') {
@@ -805,8 +824,11 @@
     }
     window.history.replaceState({}, '', pageUrl.pathname + pageUrl.search + pageUrl.hash);
 
-    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-    document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');
+    document.querySelectorAll('.lang-btn').forEach(button => {
+      const isActive = button.getAttribute('data-lang') === l;
+      button.classList.toggle('active', isActive);
+      button.setAttribute('aria-pressed', String(isActive));
+    });
 
     document.querySelectorAll('[data-en]').forEach(el => {
       const val = el.getAttribute('data-' + l);
@@ -830,7 +852,17 @@
     document.getElementById('fmsg').placeholder = l === 'tr' ? 'Mesaj' : 'Message / Mesaj';
   }
 
-  setLang(new URLSearchParams(window.location.search).get('lang') === 'tr' ? 'tr' : 'en');
+  const queryLanguage = new URLSearchParams(window.location.search).get('lang');
+  const savedLanguage = getSavedLanguagePreference();
+  const browserLanguage = (navigator.languages?.[0] || navigator.language || 'en').toLowerCase();
+  const detectedLanguage = browserLanguage.startsWith('tr') ? 'tr' : 'en';
+  const hasQueryLanguage = queryLanguage === 'tr' || queryLanguage === 'en';
+  const hasSavedLanguage = savedLanguage === 'tr' || savedLanguage === 'en';
+  const initialLanguage = hasQueryLanguage
+    ? queryLanguage
+    : (hasSavedLanguage ? savedLanguage : detectedLanguage);
+
+  setLang(initialLanguage, hasQueryLanguage);
 
   // ── WHATSAPP ──
   function copyWhatsappNumber(button) {
