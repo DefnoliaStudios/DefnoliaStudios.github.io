@@ -269,14 +269,14 @@
   <div class="content-wrap">
 
     <div class="info-bar">
-      <span>📅 <strong>Son güncelleme:</strong> Temmuz 2026</span>
+      <span>📅 <strong>Son güncelleme:</strong> 26 Ekim 2026</span>
       <span>📱 <strong>Uygulama:</strong> Lex Ludus (Android)</span>
       <span>🏢 <strong>Geliştirici:</strong> Defnolia Studios</span>
     </div>
 
     <section>
       <h2>1. Genel Bakış</h2>
-      <p>Bu gizlilik politikası, <strong>Defnolia Studios</strong> tarafından geliştirilen <strong>Lex Ludus: Hukuk Soru Bankası</strong> Android uygulamasının kişisel verilerinizi nasıl işlediğini açıklamaktadır.</p>
+      <p>Bu gizlilik politikası, <strong>Defnolia Studios</strong> tarafından geliştirilen <strong>Lex Ludus: Hukuk Yarışması</strong> Android uygulamasının kişisel verilerinizi nasıl işlediğini açıklamaktadır.</p>
       <div class="highlight-box">
         🔒 <strong>Temel ilkemiz:</strong> Uygulama, puanınızı ve ilerlemenizi yalnızca kendi cihazınızda saklar. Kimlik doğrulama veya çevrimiçi sıralama gerektirmeyen kullanım için hiçbir veri sunucularımıza gönderilmez.
       </div>
@@ -287,6 +287,7 @@
       <p><strong>Cihazınızda saklanan veriler (bize gönderilmez):</strong></p>
       <ul>
         <li>Toplam puan, seri (streak) ve skala/rütbe ilerlemesi</li>
+        <li>Yanlış cevap geçmişi ve kategori bazlı performans verileri</li>
         <li>Daha önce indirilmiş soru bankası önbelleği (çevrimdışı kullanım için)</li>
       </ul>
       <p><strong>Google Play Games Hizmetleri (isteğe bağlı, yalnızca "Küresel Sıralama" özelliğini kullanırsanız):</strong></p>
@@ -300,6 +301,12 @@
         <li>Seçtiğiniz gerekçe kategorisi ve yazdığınız açıklama metni, incelenmek üzere tarafımıza iletilir</li>
         <li>Bu formda ad, e-posta veya başka bir kimlik bilgisi istenmez</li>
       </ul>
+      <p><strong>Reklam ve abonelik hizmetleri:</strong></p>
+      <ul>
+        <li>Google Mobile Ads (AdMob); IP adresi, uygulama etkileşimleri, tanılama bilgileri ve cihaz/reklam tanımlayıcılarını reklam gösterimi, ölçüm, analiz ve sahtekârlığı önleme amaçlarıyla işleyebilir</li>
+        <li>Google Play Billing ve RevenueCat; satın alma durumu, ürün/abonelik bilgileri, anonim uygulama kullanıcı tanımlayıcısı ve gerekli teknik tanılama verilerini abonelik hakkını doğrulamak ve geri yüklemek için işleyebilir</li>
+        <li>Ödeme kartı bilgileriniz Defnolia Studios'a veya uygulamaya aktarılmaz; ödeme işlemi Google Play tarafından yürütülür</li>
+      </ul>
     </section>
 
     <section>
@@ -308,38 +315,54 @@
         <li>İlerlemenizi ve puanınızı cihazınızda tutmak</li>
         <li>Talep ettiğinizde küresel sıralamada yer almanızı sağlamak (Google Play Games üzerinden)</li>
         <li>Bildirdiğiniz hatalı soruları inceleyip soru bankasını düzeltmek</li>
+        <li>Reklam göstermek, reklam sıklığını yönetmek ve reklam performansını ölçmek</li>
+        <li>Premium aboneliğinizi doğrulamak, reklamları kaldırmak ve Premium özellikleri açmak</li>
       </ul>
     </section>
 
     <section>
       <h2>4. Veri Depolama ve Güvenlik</h2>
-      <p>Puan, seri ve ilerleme bilgileriniz <strong>yalnızca cihazınızın yerel depolama alanında</strong> saklanır (tarayıcı localStorage). Bu alan Android'in uygulama sandbox sistemi tarafından korunur ve diğer uygulamalar tarafından erişilemez.</p>
+      <p>Puan, seri, yanlış cevap geçmişi ve ilerleme bilgileriniz <strong>yalnızca cihazınızın yerel depolama alanında</strong> saklanır (uygulama localStorage alanı). Bu alan Android'in uygulama sandbox sistemi tarafından korunur ve diğer uygulamalar tarafından erişilemez.</p>
       <p>Uygulamayı sildiğinizde cihazınızdaki tüm yerel veriler otomatik olarak silinir. Google Play Games üzerinden gönderdiğiniz skor tablosu verileri Google'ın kendi sistemlerinde tutulur; bunları silmek için Google Play Games hesap ayarlarınızı kullanabilirsiniz.</p>
+      <p>AdMob, Google Play ve RevenueCat tarafından işlenen veriler ilgili sağlayıcıların güvenlik ve saklama kurallarına tabidir. Ağ üzerinden aktarılan veriler şifreli bağlantılar üzerinden iletilir.</p>
     </section>
 
     <section>
       <h2>5. Reklam ve Üçüncü Taraf Takip</h2>
       <div class="highlight-box">
-        Lex Ludus şu anda <strong>hiçbir reklam ağı veya analiz/takip hizmeti kullanmamaktadır.</strong> Uygulama içi satın alma veya reklam bulunmuyor.
+        Lex Ludus ücretsiz sürümünde <strong>Google AdMob</strong> aracılığıyla banner, geçiş ve kullanıcının isteğe bağlı başlattığı ödüllü reklamlar gösterir. Premium abonelik aktifken reklamlar gösterilmez.
       </div>
+      <p>Geçiş reklamları yalnızca oyun oturumları arasındaki doğal duraklarda ve sınırlı sıklıkta gösterilir. Ödüllü reklamlar tamamen isteğe bağlıdır ve kullanıcı reklamı izlemeyi seçtiğinde oyun içi ipucu sağlar.</p>
+      <p>Uygulama, gerekli bölgelerde Google'ın Kullanıcı Mesajlaşma Platformu üzerinden reklam izninizi ister. Sunulan gizlilik seçenekleri aracılığıyla seçiminizi daha sonra değiştirebilirsiniz. Kişiselleştirilmiş reklam izni vermemeniz reklamların tamamen kalkacağı anlamına gelmez; kişiselleştirilmemiş veya sınırlı reklamlar gösterilebilir.</p>
+      <div class="admob-box">
+        <strong>Hizmet sağlayıcıları:</strong><br>
+        Google/AdMob: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Gizlilik Politikası</a><br>
+        RevenueCat: <a href="https://www.revenuecat.com/privacy/" target="_blank" rel="noopener">RevenueCat Gizlilik Politikası</a>
+      </div>
+
+      <h2>6. Abonelikler</h2>
+      <p>Premium; reklamsız kullanım, yanlış cevap pratiği, kategori performans raporları ve uygulamada belirtilen diğer Premium özellikleri sunar. Aylık ve yıllık planlar Google Play üzerinden otomatik yenilenen abonelik olarak satılır ve ücretsiz deneme içermez.</p>
+      <p>Aboneliğinizi Google Play hesap ayarlarından yönetebilir veya iptal edebilirsiniz. Satın alımı geri yüklediğinizde RevenueCat ve Google Play, etkin abonelik hakkınızı doğrular.</p>
     </section>
 
     <section>
-      <h2>6. Çocukların Gizliliği</h2>
+      <h2>7. Çocukların Gizliliği</h2>
       <p>Lex Ludus, hukuk fakültesi öğrencileri ve sınav adayları için tasarlanmıştır; <strong>13 yaşın altındaki çocuklara yönelik değildir.</strong> 13 yaşından küçük kullanıcılara ait olduğunu bildiğimiz kişisel verileri kasıtlı olarak toplamıyoruz.</p>
     </section>
 
     <section>
-      <h2>7. Kullanıcı Hakları</h2>
+      <h2>8. Kullanıcı Hakları</h2>
       <ul>
         <li><strong>Verilerinizi silin:</strong> Uygulamayı cihazınızdan kaldırmanız yerel verilerin tamamını siler</li>
         <li><strong>Google Play Games verileri:</strong> Google hesap ayarlarınızdan yönetebilirsiniz</li>
+        <li><strong>Reklam tercihleri:</strong> Uygulamadaki “Gizlilik seçenekleri” bağlantısından uygun olduğu durumlarda değiştirebilirsiniz</li>
+        <li><strong>Abonelik:</strong> Google Play abonelik ayarlarından yönetebilir veya iptal edebilirsiniz</li>
         <li><strong>Sorularınız için:</strong> Aşağıdaki iletişim adresinden bize ulaşabilirsiniz</li>
       </ul>
     </section>
 
     <section>
-      <h2>8. Politika Değişiklikleri</h2>
+      <h2>9. Politika Değişiklikleri</h2>
       <p>Bu gizlilik politikası zaman zaman güncellenebilir. Önemli değişiklikler uygulama güncellemeleri aracılığıyla kullanıcılara duyurulur. Sayfanın üst kısmındaki "Son güncelleme" tarihi her zaman güncel versiyonu gösterir.</p>
     </section>
 
