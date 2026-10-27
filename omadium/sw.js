@@ -1,5 +1,5 @@
 // Omadium — Service Worker (tamamen yerel, CDN bağımlılığı yok)
-const CACHE = 'omadium-v1';
+const CACHE = 'omadium-v2';
 const FILES = [
   './',
   './index.html',
