@@ -280,6 +280,15 @@
     }
 
 
+    [hidden] { display:none !important; }
+    .catalog-filters { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 12px; }
+    .catalog-filters button { min-height:44px; padding:10px 16px; border:1px solid var(--border); border-radius:24px; background:transparent; color:var(--sage-d); font:inherit; font-size:.86rem; cursor:pointer; }
+    .catalog-filters button[aria-pressed="true"] { background:var(--sage-d); color:white; }
+    .catalog-status { color:var(--muted); font-size:.82rem; margin-bottom:22px; }
+    #products .card { display:flex; flex-direction:column; }
+    #products .card > a { align-self:flex-start; margin-top:auto !important; padding-top:16px; min-height:44px; }
+    .skip-link { position:fixed; top:8px; left:12px; z-index:200; background:var(--cream); color:var(--sage-d); padding:12px; transform:translateY(-160%); }
+    .skip-link:focus { transform:none; }
     .app-spotlight { display:grid; grid-template-columns: 1fr 1fr; gap:32px; align-items:center; padding:32px; margin-bottom:28px; border:1px solid #dcc8ce; border-radius:18px; background:#f2e8e9; }
     .app-spotlight h3 { font-family:'Cormorant Garamond',serif; font-size:2.3rem; line-height:1.12; margin:12px 0; }
     .app-spotlight p { font-size:.95rem; line-height:1.7; color:var(--muted); }
@@ -576,6 +585,7 @@
   </style>
 </head>
 <body>
+<a class="skip-link" href="#products" data-en="Skip to apps" data-tr="Uygulamalara geç">Skip to apps</a>
 
 <!-- HEADER -->
 <header>
@@ -629,7 +639,16 @@
   </div>
 
 
-  <article class="app-spotlight" aria-labelledby="woman-title">
+  <div class="catalog-filters" role="group" aria-label="Product categories" data-label-en="Product categories" data-label-tr="Ürün kategorileri" hidden>
+    <button type="button" data-filter="all" aria-pressed="true" data-en="All" data-tr="Tümü">All</button>
+    <button type="button" data-filter="wellbeing" aria-pressed="false" data-en="Wellbeing" data-tr="İyi yaşam">Wellbeing</button>
+    <button type="button" data-filter="games" aria-pressed="false" data-en="Games" data-tr="Oyunlar">Games</button>
+    <button type="button" data-filter="discovery" aria-pressed="false" data-en="Reflection" data-tr="Kişisel keşif">Reflection</button>
+    <button type="button" data-filter="books" aria-pressed="false" data-en="Books" data-tr="Kitaplar">Books</button>
+  </div>
+  <p class="catalog-status" role="status" aria-live="polite" aria-atomic="true" hidden></p>
+
+  <article data-category="wellbeing discovery games" class="app-spotlight" aria-labelledby="woman-title">
     <div>
       <div class="card-icon" style="background:transparent;padding:0"><img src="defnolia-woman-icon.webp" alt="" width="44" height="44" style="border-radius:10px"></div>
       <p class="section-label" data-en="Meet Defnolia Woman" data-tr="Defnolia Woman ile tanışın">Meet Defnolia Woman</p>
@@ -648,7 +667,7 @@
   </article>
 
   <div class="cards fade-up">
-    <div class="card">
+    <div class="card" data-category="wellbeing">
       <div class="card-icon" style="background:none;padding:0;"><img src="dongu-icon.png" alt="Döngü" style="width:44px;height:44px;border-radius:10px;"></div>
       <div class="card-title">Döngü — Period & Cycle Tracker</div>
       <p class="card-desc" data-en="Track your period and cycle, view estimated dates and explore your cycle statistics." data-tr="Regl ve döngü takibinizi yapın, tahmini tarihleri ve döngü istatistiklerinizi görüntüleyin.">
@@ -659,40 +678,38 @@
       </a>
     </div>
 
-    <div class="card">
+    <div class="card" data-category="books">
       <div class="card-icon">🎨</div>
       <div class="card-title">Kawaii Animals Coloring Book</div>
-      <p class="card-desc" data-en="A delightful coloring book for kids ages 3–6, featuring 50 cute pets and wild animals — the first title in our growing collection." data-tr="3–6 yaş arası çocuklar için tasarlanmış, 50 sevimli evcil ve vahşi hayvan içeren keyifli bir boyama kitabı — büyüyen koleksiyonumuzun ilk eseri.">
-        A delightful coloring book for kids ages 3–6, featuring 50 cute pets and wild animals — the first title in our growing collection.
+      <p class="card-desc" data-en="A coloring book for ages 3–6, with 50 cute pets and wild animals." data-tr="3–6 yaş için 50 sevimli evcil ve vahşi hayvan içeren boyama kitabı.">
+        A coloring book for ages 3–6, with 50 cute pets and wild animals.
       </p>
       <a href="https://www.amazon.com/dp/B0GZFHBQS3" target="_blank" rel="noopener" style="display:inline-block; margin-top:14px; text-decoration:none;">
         <span class="card-badge badge-live" data-en="Available on Amazon →" data-tr="Amazon'da Mevcut →">Available on Amazon →</span>
       </a>
     </div>
 
-    <div class="card">
+    <div class="card" data-category="discovery">
       <div class="card-icon" style="background:transparent;"><img src="iching-icon.png" alt="I Ching" style="width:44px;height:44px;border-radius:10px;"></div>
       <div class="card-title">I Ching: Wu Xing 五行</div>
-      <p class="card-desc" data-en="An Android app that brings the ancient I Ching oracle to your pocket. Toss coins, receive hexagram readings, explore the 64 symbols of the Book of Changes — with Wu Xing (Five Elements) analysis." data-tr="Kadim I Ching kehanetini cebinize getiren bir Android uygulaması. Para atın, hexagram yorumlarını alın, 64 sembolü keşfedin — Wu Xing (Beş Element) analiziyle.">
-        An Android app that brings the ancient I Ching oracle to your pocket. Toss coins, receive hexagram readings, explore the 64 symbols of the Book of Changes — with Wu Xing (Five Elements) analysis.
+      <p class="card-desc" data-en="Explore I Ching hexagrams and Wu Xing analysis with a digital coin toss." data-tr="Dijital para atışıyla I Ching sembollerini ve Wu Xing analizini keşfedin.">
+        Explore I Ching hexagrams and Wu Xing analysis with a digital coin toss.
       </p>
       <a href="https://play.google.com/store/apps/details?id=com.defnoliastudios.iching" target="_blank" rel="noopener" style="display:inline-block; margin-top:14px; text-decoration:none;">
         <span class="card-badge badge-live" data-en="Available on Google Play →" data-tr="Google Play'de Mevcut →">Available on Google Play →</span>
       </a>
     </div>
 
-    <div class="card">
+    <div class="card" data-category="games">
       <div class="card-icon" style="background:transparent;padding:0;"><img src="bito-icon.png" alt="Bito's Adventure" style="width:44px;height:44px;border-radius:10px;"></div>
       <div class="card-title" data-en="Bito's Adventure" data-tr="Bito'nun Maceras&#305;">Bito's Adventure</div>
-      <p class="card-desc" data-en="A playful coding game for kids. Stack commands, plan routes, and guide Bito through 108 space-themed puzzle missions while learning the basics of programming." data-tr="&#199;ocuklar i&#231;in oyunla &#246;&#287;reten bir kodlama oyunu. Komutlar&#305; dizin, rotay&#305; planlay&#305;n ve Bito'yu 108 uzay temal&#305; bulmaca g&#246;revinde y&#246;nlendirerek programlaman&#305;n temellerini ke&#351;fedin.">
-        A playful coding game for kids. Stack commands, plan routes, and guide Bito through 108 space-themed puzzle missions while learning the basics of programming.
-      </p>
+      <p class="card-desc" data-en="Arrange commands, plan a route and solve space puzzles with Bito while discovering the basics of coding." data-tr="Komutları sıralayın, rotayı planlayın ve Bito ile uzay bulmacalarını çözerken kodlamanın temellerini keşfedin.">Arrange commands, plan a route and solve space puzzles with Bito while discovering the basics of coding.</p>
       <a href="https://play.google.com/store/apps/details?id=com.defnoliastudios.bitosmacerasi" target="_blank" rel="noopener" style="display:inline-block; margin-top:14px; text-decoration:none;">
         <span class="card-badge badge-live" data-en="Available on Google Play &#8594;" data-tr="Google Play'de Mevcut &#8594;">Available on Google Play &#8594;</span>
       </a>
     </div>
 
-    <div class="card">
+    <div class="card" data-category="games">
       <div class="card-icon" style="background:transparent;padding:0;"><img src="90atak-icon.png" alt="90 ATAK" style="width:44px;height:44px;border-radius:10px;"></div>
       <div class="card-title">90 ATAK</div>
       <p class="card-desc" data-en="Test your football knowledge with different game modes, themed jokers, missions and weekly competition." data-tr="Farklı oyun modları, futbol temalı jokerler, görevler ve haftalık rekabetle futbol bilginizi sınayın.">Test your football knowledge with different game modes, themed jokers, missions and weekly competition.</p>
@@ -881,6 +898,9 @@
       if (val) el.innerHTML = val;
     });
 
+    document.querySelectorAll('[data-label-en]').forEach(el => el.setAttribute('aria-label', el.getAttribute('data-label-' + l)));
+    updateCatalogStatus();
+
     document.querySelectorAll('[data-alt-en]').forEach(el => { el.alt = el.getAttribute('data-alt-' + l); });
 
     document.querySelectorAll('[data-href-en]').forEach(el => {
@@ -900,6 +920,27 @@
     : (hasSavedLanguage ? savedLanguage : detectedLanguage);
 
   setLang(initialLanguage, hasQueryLanguage);
+
+  // Catalog controls are progressive enhancement: every product remains available without JavaScript.
+  function updateCatalogStatus() {
+    const status = document.querySelector('.catalog-status');
+    const items = [...document.querySelectorAll('#products [data-category]')];
+    const count = items.filter(item => !item.hidden).length;
+    status.textContent = lang === 'tr' ? `${count} içerik gösteriliyor` : `${count} ${count === 1 ? "item" : "items"} shown`;
+  }
+  document.querySelectorAll('[data-filter]').forEach(button => {
+    button.addEventListener('click', () => {
+      const category = button.dataset.filter;
+      document.querySelectorAll('[data-filter]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+      document.querySelectorAll('#products [data-category]').forEach(item => {
+        item.hidden = category !== 'all' && !item.dataset.category.split(' ').includes(category);
+      });
+      updateCatalogStatus();
+    });
+  });
+  document.querySelector('.catalog-filters').hidden = false;
+  document.querySelector('.catalog-status').hidden = false;
+  updateCatalogStatus();
 
   // ── WHATSAPP ──
   function copyWhatsappNumber(button) {
