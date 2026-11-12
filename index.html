@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Defnolia Studios · Apps & AI Solutions</title>
   <meta name="description" content="Explore Defnolia Studios apps, Android games and creative books. Discover Defnolia Woman, Bito, 90 ATAK and more." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Defnolia Studios · Apps, Games & Books" />
+  <meta property="og:description" content="Discover Defnolia Woman and our Android apps, games and creative books." />
+  <meta property="og:url" content="https://defnoliastudios.github.io/" />
+  <meta property="og:image" content="https://defnoliastudios.github.io/logo.png" />
+  <meta property="og:image:alt" content="Defnolia Studios laurel D logo" />
+  <meta name="twitter:card" content="summary" />
   <link rel="canonical" href="https://defnoliastudios.github.io/" />
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -271,6 +278,24 @@
       margin-top: 4px;
       line-height: 1.5;
     }
+
+
+    .app-spotlight { display:grid; grid-template-columns: 1fr 1fr; gap:32px; align-items:center; padding:32px; margin-bottom:28px; border:1px solid #dcc8ce; border-radius:18px; background:#f2e8e9; }
+    .app-spotlight h3 { font-family:'Cormorant Garamond',serif; font-size:2.3rem; line-height:1.12; margin:12px 0; }
+    .app-spotlight p { font-size:.95rem; line-height:1.7; color:var(--muted); }
+    .app-features { display:flex; flex-wrap:wrap; gap:8px; margin:18px 0; padding:0; list-style:none; }
+    .app-features li { padding:6px 10px; border:1px solid #dcc8ce; border-radius:20px; font-size:.8rem; }
+    .app-screens { display:grid; grid-template-columns:1fr 1fr; gap:12px; align-items:start; }
+    .app-screens img { display:block; width:100%; height:auto; border-radius:14px; border:1px solid #dcc8ce; }
+    .app-screens figcaption { font-size:.72rem; line-height:1.5; color:var(--muted); margin-top:8px; }
+    .app-note { margin-top:14px; font-size:.78rem !important; }
+    .support-link { display:inline-block; margin-top:12px; color:var(--sage-d); text-underline-offset:4px; }
+    .quick-guide { margin-top:28px; padding:24px; border:1px solid var(--border); border-radius:12px; }
+    .quick-guide h3 { font-family:'Cormorant Garamond',serif; font-size:1.6rem; margin-bottom:12px; }
+    .quick-guide details { border-top:1px solid var(--border); padding:14px 0; }
+    .quick-guide summary { cursor:pointer; font-size:.94rem; }
+    .quick-guide p { color:var(--muted); line-height:1.7; font-size:.86rem; margin-top:10px; }
+    @media(max-width:700px) { .app-spotlight { grid-template-columns:1fr; padding:24px 20px; gap:24px; } .app-spotlight h3 { font-size:2rem; } }
 
     /* ── PRODUCTS GRID ── */
     .products-header {
@@ -603,18 +628,26 @@
     <h2 class="section-title" data-en="Apps & books crafted<br>with care" data-tr="Özenle tasarlanmış<br>uygulamalar ve kitaplar">Apps & books crafted<br>with care</h2>
   </div>
 
-  <div class="cards fade-up">
-    <div class="card">
-      <div class="card-icon" style="background:transparent;padding:0;"><img src="defnolia-woman-icon.webp" alt="Defnolia Woman" style="width:44px;height:44px;border-radius:10px;"></div>
-      <div class="card-title">Defnolia Woman</div>
-      <p class="card-desc" data-en="Cycle tracking, wellbeing tools, a personal journal, tarot and games in one Android app. Available in seven languages." data-tr="Döngü takibi, iyi oluş araçları, kişisel günlük, tarot ve oyunları bir araya getiren Android uygulaması. Yedi dilde kullanılabilir.">
-        Cycle tracking, wellbeing tools, a personal journal, tarot and games in one Android app. Available in seven languages.
-      </p>
-      <a href="https://play.google.com/store/apps/details?id=com.defnolia.woman" target="_blank" rel="noopener" style="display:inline-block; margin-top:14px; text-decoration:none;">
-        <span class="card-badge badge-live" data-en="Available on Google Play →" data-tr="Google Play'de Mevcut →">Available on Google Play →</span>
-      </a>
-    </div>
 
+  <article class="app-spotlight" aria-labelledby="woman-title">
+    <div>
+      <div class="card-icon" style="background:transparent;padding:0"><img src="defnolia-woman-icon.webp" alt="" width="44" height="44" style="border-radius:10px"></div>
+      <p class="section-label" data-en="Meet Defnolia Woman" data-tr="Defnolia Woman ile tanışın">Meet Defnolia Woman</p>
+      <h3 id="woman-title" data-en="A space for<br>your daily rhythm" data-tr="Günlük ritminiz için<br>size ait bir alan">A space for<br>your daily rhythm</h3>
+      <p data-en="Track your cycle, make time for yourself and explore your interests. Your wellbeing tools, journal and games, together in one Android app." data-tr="Döngünüzü takip edin, kendinize zaman ayırın ve ilgi alanlarınızı keşfedin. İyi yaşam araçları, günlük ve oyunlar tek Android uygulamasında.">Track your cycle, make time for yourself and explore your interests. Your wellbeing tools, journal and games, together in one Android app.</p>
+      <ul class="app-features"><li data-en="Cycle tracking" data-tr="Döngü takibi">Cycle tracking</li><li data-en="Journal & wellbeing" data-tr="Günlük ve iyi yaşam">Journal & wellbeing</li><li data-en="Tarot & games" data-tr="Tarot ve oyunlar">Tarot & games</li><li data-en="7 languages" data-tr="7 dil">7 languages</li></ul>
+      <a class="hero-cta" href="https://play.google.com/store/apps/details?id=com.defnolia.woman" target="_blank" rel="noopener" data-en="Explore on Google Play →" data-tr="Google Play’de incele →">Explore on Google Play →</a>
+      <p class="app-note" data-en="Some features require a subscription. Prices and renewal terms are shown on Google Play before purchase." data-tr="Bazı özellikler abonelik gerektirir. Ücret ve yenileme koşulları satın almadan önce Google Play’de gösterilir.">Some features require a subscription. Prices and renewal terms are shown on Google Play before purchase.</p>
+      <a class="support-link" href="/defnolia-woman/" data-en="Privacy & app support" data-tr="Gizlilik ve uygulama desteği">Privacy & app support</a>
+    </div>
+    <div class="app-screens">
+      <figure><img src="woman-preview-1.webp" width="333" height="592" loading="lazy" alt="Defnolia Woman home screen" data-alt-en="Defnolia Woman home screen" data-alt-tr="Defnolia Woman ana ekranı"><figcaption data-en="Your daily overview" data-tr="Gününüze genel bakış">Your daily overview</figcaption></figure>
+      <figure><img src="woman-preview-2.webp" width="333" height="592" loading="lazy" alt="Defnolia Woman cycle tracking screen" data-alt-en="Defnolia Woman cycle tracking screen" data-alt-tr="Defnolia Woman döngü takip ekranı"><figcaption data-en="Cycle tracking" data-tr="Döngü takibi">Cycle tracking</figcaption></figure>
+      <p class="app-note" style="grid-column:1/-1" data-en="Screenshots from our Google Play listing show the English interface. Turkish is also available." data-tr="Google Play sayfamızdan alınan görseller İngilizce arayüzü gösterir. Uygulama Türkçe de kullanılabilir.">Screenshots from our Google Play listing show the English interface. Turkish is also available.</p>
+    </div>
+  </article>
+
+  <div class="cards fade-up">
     <div class="card">
       <div class="card-icon" style="background:none;padding:0;"><img src="dongu-icon.png" alt="Döngü" style="width:44px;height:44px;border-radius:10px;"></div>
       <div class="card-title">Döngü — Period & Cycle Tracker</div>
@@ -668,6 +701,14 @@
       </a>
     </div>
 
+  </div>
+
+
+  <div class="quick-guide">
+    <h3 data-en="Before you explore" data-tr="Keşfetmeden önce">Before you explore</h3>
+    <details><summary data-en="Where can I download the apps?" data-tr="Uygulamaları nereden indirebilirim?">Where can I download the apps?</summary><p data-en="Our app links open the official Google Play listing. Check device compatibility and any pricing there before downloading." data-tr="Uygulama bağlantıları resmî Google Play sayfasını açar. İndirmeden önce cihaz uyumluluğunu ve varsa ücretleri oradan kontrol edebilirsiniz.">Our app links open the official Google Play listing. Check device compatibility and any pricing there before downloading.</p></details>
+    <details><summary data-en="Are all features free?" data-tr="Tüm özellikler ücretsiz mi?">Are all features free?</summary><p data-en="Pricing varies by app. Some apps offer in-app purchases or subscriptions. Check each app’s Google Play listing for its current terms." data-tr="Ücretlendirme uygulamaya göre değişir. Bazı uygulamalarda uygulama içi satın alma veya abonelik bulunur. Güncel koşulları ilgili uygulamanın Google Play sayfasından inceleyebilirsiniz.">Pricing varies by app. Some apps offer in-app purchases or subscriptions. Check each app’s Google Play listing for its current terms.</p></details>
+    <details><summary data-en="How can I get support?" data-tr="Nasıl destek alabilirim?">How can I get support?</summary><p><span data-en="Tell us the app name and the issue you encountered. Please do not send passwords, payment details or private health records." data-tr="Uygulamanın adını ve karşılaştığınız sorunu yazabilirsiniz. Şifre, ödeme bilgisi veya özel sağlık kayıtlarınızı göndermeyin.">Tell us the app name and the issue you encountered. Please do not send passwords, payment details or private health records.</span> <a href="mailto:defnoliastudios@gmail.com">defnoliastudios@gmail.com</a></p></details>
   </div>
 
   <div class="coming-soon fade-up" style="margin-top:28px">
@@ -839,6 +880,8 @@
       const val = el.getAttribute('data-' + l);
       if (val) el.innerHTML = val;
     });
+
+    document.querySelectorAll('[data-alt-en]').forEach(el => { el.alt = el.getAttribute('data-alt-' + l); });
 
     document.querySelectorAll('[data-href-en]').forEach(el => {
       el.href = el.getAttribute('data-href-' + l);
