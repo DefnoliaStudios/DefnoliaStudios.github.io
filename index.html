@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Defnolia Studios · Apps & AI Solutions</title>
-  <meta name="description" content="Custom applications, digital products, and AI setup and training for law firms." />
+  <meta name="description" content="Explore Defnolia Studios apps, Android games and creative books. Discover Defnolia Woman, Bito, 90 ATAK and more." />
   <link rel="canonical" href="https://defnoliastudios.github.io/" />
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,6 +24,12 @@
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+    section { scroll-margin-top: 120px; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--terra); outline-offset: 5px; }
+    .package-welcome { max-width: 904px; margin: 0 auto 24px; padding: 18px 22px; border: 1px solid var(--border); border-radius: 12px; line-height: 1.6; }
+    @media (max-width:700px) { .package-welcome { margin: 0 20px 20px; } }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *, *::before, *::after { transition:none !important; } }
+
 
     body {
       font-family: 'Jost', sans-serif;
@@ -527,13 +533,18 @@
       .contact-box { grid-template-columns: 1fr; padding: 32px 24px; }
       .coming-soon { grid-template-columns: 1fr; }
       .coming-icon { display: none; }
-      nav { display: none; }
+      .header-inner { flex-wrap: wrap; gap: 12px; padding: 12px 20px; }
+      nav { display: flex; order: 3; width: 100%; justify-content: space-between; gap: 10px; }
+      nav a { font-size: .72rem; }
+      .hero-title { font-size: 2.7rem; }
+      .hero { padding-bottom: 40px; }
+
     }
 
     /* ── FADE IN ANIMATION ── */
     .fade-up {
-      opacity: 0;
-      transform: translateY(28px);
+      opacity: 1;
+      transform: none;
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
@@ -549,9 +560,9 @@
       <span class="logo-name">Defnolia Studios</span>
     </a>
     <nav>
+      <a href="#products" data-en="Apps & Games" data-tr="Uygulamalar">Apps & Games</a>
       <a href="#services" data-en="Services" data-tr="Hizmetler">Services</a>
       <a href="#about" data-en="About" data-tr="Hakkında">About</a>
-      <a href="#products" data-en="Products" data-tr="Ürünler">Products</a>
       <a href="#contact" data-en="Contact" data-tr="İletişim">Contact</a>
     </nav>
     <div class="lang-toggle">
@@ -564,15 +575,15 @@
 <!-- HERO -->
 <div class="hero fade-up">
   <div class="hero-left">
-    <span class="hero-tag" data-en="Independent Digital Publisher" data-tr="Bağımsız Dijital Yayıncı">Independent Digital Publisher</span>
+    <span class="hero-tag" data-en="Independent App & Game Studio" data-tr="Bağımsız Uygulama ve Oyun Stüdyosu">Independent App & Game Studio</span>
     <h1 class="hero-title">
-      <span data-en="Creative <em>digital</em><br>content studio" data-tr="Yaratıcı <em>dijital</em><br>içerik stüdyosu">Creative <em>digital</em><br>content studio</span>
+      <span data-en="Apps & games<br>for <em>everyday life</em>" data-tr="Hayatınıza eşlik eden<br><em>uygulamalar ve oyunlar</em>">Apps & games<br>for <em>everyday life</em></span>
     </h1>
-    <p class="hero-desc" data-en="Defnolia Studios creates thoughtfully designed apps, digital books, and creative content — crafted with care, published with purpose." data-tr="Defnolia Studios; özenle tasarlanmış uygulamalar, dijital kitaplar ve yaratıcı içerikler üretir. Her içerik, dikkat ve özgünlükle hayata geçirilir.">
-      Defnolia Studios creates thoughtfully designed apps, digital books, and creative content — crafted with care, published with purpose.
+    <p class="hero-desc" data-en="Discover wellbeing tools, playful learning and games. Explore our Android apps on Google Play, alongside our creative books." data-tr="İyi oluş araçlarından eğitici oyunlara, futbol bilgisinden yaratıcı kitaplara: Defnolia Studios’un dünyasını keşfedin. Android uygulamalarımıza Google Play’den ulaşın.">
+      Discover wellbeing tools, playful learning and games. Explore our Android apps on Google Play, alongside our creative books.
     </p>
     <a href="#products" class="hero-cta">
-      <span data-en="Explore our work" data-tr="Ürünlerimizi keşfedin">Explore our work</span>
+      <span data-en="Explore apps & games" data-tr="Uygulamaları keşfet">Explore apps & games</span>
       <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
   </div>
@@ -583,78 +594,12 @@
 
 <div class="divider"></div>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="about-grid fade-up">
-    <div class="about-left">
-      <p class="section-label" data-en="About" data-tr="Hakkında">About</p>
-      <h2 class="section-title" data-en="A studio built on<br>creativity & craft" data-tr="Yaratıcılık ve özene<br>dayalı bir stüdyo">A studio built on<br>creativity & craft</h2>
-      <p class="section-body" data-en="Defnolia Studios is an independent digital publishing studio specialising in creative books and content for all ages. Inspired by the name of our daughter Defne, we put heart into everything we create." data-tr="Defnolia Studios; her yaşa yönelik yaratıcı kitaplar ve içerikler üreten bağımsız bir dijital yayın stüdyosudur. Kızımız Defne'nin adından ilham alan stüdyomuz, ürettiği her içeriğe kalbini koyar.">
-        Defnolia Studios is an independent digital publishing studio specialising in creative books and content for all ages. Inspired by the name of our daughter Defne, we put heart into everything we create.
-      </p>
-
-      <div class="pill-list">
-        <span class="pill" data-en="Coloring Books" data-tr="Boyama Kitapları">Coloring Books</span>
-        <span class="pill" data-en="Children's Books" data-tr="Çocuk Kitapları">Children's Books</span>
-        <span class="pill" data-en="Available on Amazon" data-tr="Amazon'da Mevcut">Available on Amazon</span>
-        <span class="pill" data-en="AI-Assisted Design" data-tr="Yapay Zeka Destekli Tasarım">AI-Assisted Design</span>
-        <span class="pill" data-en="Android Apps" data-tr="Android Uygulamaları">Android Apps</span>
-      </div>
-    </div>
-
-    <div class="about-right">
-      <div class="name-block">
-        <div class="name">Feride Pınar Tuna</div>
-        <div class="role" data-en="Founder & Publisher · Defnolia Studios" data-tr="Kurucu & Yayıncı · Defnolia Studios">Founder & Publisher · Defnolia Studios</div>
-      </div>
-
-      <p class="section-body" style="margin-top:24px" data-en="We combine thoughtful design with the latest creative tools to bring beautiful, accessible digital books to readers worldwide." data-tr="Güzel, erişilebilir dijital kitapları dünya genelindeki okuyuculara ulaştırmak için özenli tasarımı ve en yeni yaratıcı araçları bir araya getiriyoruz.">
-        We combine thoughtful design with the latest creative tools to bring beautiful, accessible digital books to readers worldwide.
-      </p>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- SERVICES -->
-<section id="services">
-  <div class="products-header fade-up">
-    <p class="section-label" data-en="Our Services" data-tr="Hizmetlerimiz">Our Services</p>
-    <h2 class="section-title" data-en="Digital solutions tailored<br>to your needs" data-tr="İhtiyacınıza özel<br>dijital çözümler">Digital solutions tailored<br>to your needs</h2>
-  </div>
-
-  <div class="cards fade-up">
-    <div class="card service-card">
-      <div class="card-icon">01</div>
-      <div class="card-title" data-en="Custom Applications" data-tr="Size Özel Uygulamalar">Custom Applications</div>
-      <p class="card-desc" data-en="We develop mobile, web, and internal applications tailored to your needs. Contact us for details." data-tr="İhtiyacınıza göre mobil, web ve ofis içi uygulamalar geliştiriyoruz. Detaylı bilgi için bize ulaşın.">
-        We develop mobile, web, and internal applications tailored to your needs. Contact us for details.
-      </p>
-      <a href="#contact" style="display:inline-block; margin-top:14px; text-decoration:none;">
-        <span class="card-badge badge-live" data-en="Contact us for details →" data-tr="Detaylı bilgi için ulaşın →">Contact us for details →</span>
-      </a>
-    </div>
-
-    <div class="card service-card">
-      <div class="card-icon">02</div>
-      <div class="card-title" data-en="AI for Law Firms" data-tr="Hukuk Büronuz İçin Yapay Zekâ">AI for Law Firms</div>
-      <p class="card-desc" data-en="We set up leading AI systems suited to your law firm. We teach you how to choose the right plan and model, use quotas efficiently, produce reports from case files quickly, and reduce errors and hallucination risks. We also help you build simple tools for your office." data-tr="Hukuk büronuza ihtiyacınıza uygun önde gelen yapay zekâ sistemlerini kuruyoruz. Doğru paket ve modeli seçmeyi, kotanızı verimli kullanmayı, dosyalarınızdan kısa sürede rapor almayı ve hata ile halüsinasyon riskini azaltmayı öğretiyoruz. Ofisiniz için basit uygulamalar geliştirmenize de yardımcı oluyoruz.">
-        We set up leading AI systems suited to your law firm. We teach you how to choose the right plan and model, use quotas efficiently, produce reports from case files quickly, and reduce errors and hallucination risks. We also help you build simple tools for your office.
-      </p>
-      <a href="/ai-for-law-firms/" data-href-en="/ai-for-law-firms/" data-href-tr="/hukuk-burolari-yapay-zeka/" style="display:inline-block; margin-top:14px; text-decoration:none;">
-        <span class="card-badge badge-live" data-en="View the service →" data-tr="Hizmeti inceleyin →">View the service →</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
+<aside class="package-welcome" data-en="Met us through our jewellery? Welcome to the creative world of Defnolia Studios — explore our apps and games below." data-tr="Takılarımızla tanıştınız mı? Defnolia Studios’un yaratıcı dünyasına hoş geldiniz. Uygulamalarımızı ve oyunlarımızı aşağıda keşfedebilirsiniz.">Met us through our jewellery? Welcome to the creative world of Defnolia Studios — explore our apps and games below.</aside>
 
 <!-- PRODUCTS -->
 <section id="products">
   <div class="products-header fade-up">
-    <p class="section-label" data-en="Our Products" data-tr="Ürünlerimiz">Our Products</p>
+    <p class="section-label" data-en="Apps, Games & Books" data-tr="Uygulamalar, Oyunlar ve Kitaplar">Apps, Games & Books</p>
     <h2 class="section-title" data-en="Apps & books crafted<br>with care" data-tr="Özenle tasarlanmış<br>uygulamalar ve kitaplar">Apps & books crafted<br>with care</h2>
   </div>
 
@@ -673,8 +618,8 @@
     <div class="card">
       <div class="card-icon" style="background:none;padding:0;"><img src="dongu-icon.png" alt="Döngü" style="width:44px;height:44px;border-radius:10px;"></div>
       <div class="card-title">Döngü — Period & Cycle Tracker</div>
-      <p class="card-desc" data-en="A beautifully designed period and cycle tracking app. Predicts your next period, shows ovulation days, and provides detailed cycle statistics — all data stays on your device, never shared." data-tr="Zarif tasarımlı bir regl ve döngü takip uygulaması. Bir sonraki reglinizi tahmin eder, yumurtlama günlerinizi gösterir ve detaylı döngü istatistikleri sunar — tüm veriler cihazınızda kalır, kimseyle paylaşılmaz.">
-        A beautifully designed period and cycle tracking app. Predicts your next period, shows ovulation days, and provides detailed cycle statistics — all data stays on your device, never shared.
+      <p class="card-desc" data-en="Track your period and cycle, view estimated dates and explore your cycle statistics." data-tr="Regl ve döngü takibinizi yapın, tahmini tarihleri ve döngü istatistiklerinizi görüntüleyin.">
+        Track your period and cycle, view estimated dates and explore your cycle statistics.
       </p>
       <a href="https://play.google.com/store/apps/details?id=com.reglapp.takvim" target="_blank" rel="noopener" style="display:inline-block; margin-top:14px; text-decoration:none;">
         <span class="card-badge badge-live" data-en="Available on Google Play →" data-tr="Google Play'de Mevcut →">Available on Google Play →</span>
@@ -717,22 +662,12 @@
     <div class="card">
       <div class="card-icon" style="background:transparent;padding:0;"><img src="90atak-icon.png" alt="90 ATAK" style="width:44px;height:44px;border-radius:10px;"></div>
       <div class="card-title">90 ATAK</div>
-      <p class="card-desc" data-en="A fast-paced football trivia game featuring 572 questions, including 68 World Cup questions and 23 current World Cup questions, plus multiple game modes, football-themed jokers, missions, ranks, and weekly competition." data-tr="68 D&#252;nya Kupas&#305; ve 23 g&#252;ncel D&#252;nya Kupas&#305; sorusu dahil toplam 572 soruluk; farkl&#305; oyun modlar&#305;, futbol temal&#305; jokerler, g&#246;revler, r&#252;tbeler ve haftal&#305;k rekabet sunan h&#305;zl&#305; tempolu futbol bilgi yar&#305;&#351;mas&#305;.">
-        A fast-paced football trivia game featuring 572 questions, including 68 World Cup questions and 23 current World Cup questions, plus multiple game modes, football-themed jokers, missions, ranks, and weekly competition.
-      </p>
+      <p class="card-desc" data-en="Test your football knowledge with different game modes, themed jokers, missions and weekly competition." data-tr="Farklı oyun modları, futbol temalı jokerler, görevler ve haftalık rekabetle futbol bilginizi sınayın.">Test your football knowledge with different game modes, themed jokers, missions and weekly competition.</p>
       <a href="https://play.google.com/store/apps/details?id=com.defnolia.doksanatak" target="_blank" rel="noopener" style="display:inline-block; margin-top:14px; text-decoration:none;">
         <span class="card-badge badge-live" data-en="Available on Google Play &#8594;" data-tr="Google Play'de Mevcut &#8594;">Available on Google Play &#8594;</span>
       </a>
     </div>
 
-    <div class="card">
-      <div class="card-icon">📱</div>
-      <div class="card-title" data-en="More Apps Coming" data-tr="Daha Fazla Uygulama Geliyor">More Apps Coming</div>
-      <p class="card-desc" data-en="New interactive and creative apps are in development. Stay tuned for more thoughtfully designed Android experiences." data-tr="Yeni etkileşimli ve yaratıcı uygulamalar geliştirme aşamasındadır. Özenle tasarlanmış yeni Android deneyimleri için bizi takipte kalın.">
-        New interactive and creative apps are in development. Stay tuned for more thoughtfully designed Android experiences.
-      </p>
-      <span class="card-badge badge-soon" data-en="In Development" data-tr="Geliştirme Aşamasında">In Development</span>
-    </div>
   </div>
 
   <div class="coming-soon fade-up" style="margin-top:28px">
@@ -748,14 +683,82 @@
 
 <div class="divider"></div>
 
+<!-- SERVICES -->
+<section id="services">
+  <div class="products-header fade-up">
+    <p class="section-label" data-en="Our Services" data-tr="Hizmetlerimiz">Our Services</p>
+    <h2 class="section-title" data-en="Digital solutions tailored<br>to your needs" data-tr="İhtiyacınıza özel<br>dijital çözümler">Digital solutions tailored<br>to your needs</h2>
+  </div>
+
+  <div class="cards fade-up">
+    <div class="card service-card">
+      <div class="card-icon">01</div>
+      <div class="card-title" data-en="Custom Applications" data-tr="Size Özel Uygulamalar">Custom Applications</div>
+      <p class="card-desc" data-en="We develop mobile, web, and internal applications tailored to your needs. Contact us for details." data-tr="İhtiyacınıza göre mobil, web ve ofis içi uygulamalar geliştiriyoruz. Detaylı bilgi için bize ulaşın.">
+        We develop mobile, web, and internal applications tailored to your needs. Contact us for details.
+      </p>
+      <a href="#contact" style="display:inline-block; margin-top:14px; text-decoration:none;">
+        <span class="card-badge badge-live" data-en="Contact us for details →" data-tr="Detaylı bilgi için ulaşın →">Contact us for details →</span>
+      </a>
+    </div>
+
+    <div class="card service-card">
+      <div class="card-icon">02</div>
+      <div class="card-title" data-en="AI for Law Firms" data-tr="Hukuk Büronuz İçin Yapay Zekâ">AI for Law Firms</div>
+      <p class="card-desc" data-en="We set up leading AI systems suited to your law firm. We teach you how to choose the right plan and model, use quotas efficiently, produce reports from case files quickly, and reduce errors and hallucination risks. We also help you build simple tools for your office." data-tr="Hukuk büronuza ihtiyacınıza uygun önde gelen yapay zekâ sistemlerini kuruyoruz. Doğru paket ve modeli seçmeyi, kotanızı verimli kullanmayı, dosyalarınızdan kısa sürede rapor almayı ve hata ile halüsinasyon riskini azaltmayı öğretiyoruz. Ofisiniz için basit uygulamalar geliştirmenize de yardımcı oluyoruz.">
+        We set up leading AI systems suited to your law firm. We teach you how to choose the right plan and model, use quotas efficiently, produce reports from case files quickly, and reduce errors and hallucination risks. We also help you build simple tools for your office.
+      </p>
+      <a href="/ai-for-law-firms/" data-href-en="/ai-for-law-firms/" data-href-tr="/hukuk-burolari-yapay-zeka/" style="display:inline-block; margin-top:14px; text-decoration:none;">
+        <span class="card-badge badge-live" data-en="View the service →" data-tr="Hizmeti inceleyin →">View the service →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid fade-up">
+    <div class="about-left">
+      <p class="section-label" data-en="About" data-tr="Hakkında">About</p>
+      <h2 class="section-title" data-en="A studio built on<br>creativity & craft" data-tr="Yaratıcılık ve özene<br>dayalı bir stüdyo">A studio built on<br>creativity & craft</h2>
+      <p class="section-body" data-en="Defnolia Studios is an independent studio creating apps, games and books. Inspired by the name of our daughter Defne, we put heart into everything we create." data-tr="Defnolia Studios; uygulamalar, oyunlar ve kitaplar geliştiren bağımsız bir stüdyodur. Kızımız Defne'nin adından ilham alan stüdyomuz, ürettiği her içeriğe kalbini koyar.">
+        Defnolia Studios is an independent studio creating apps, games and books. Inspired by the name of our daughter Defne, we put heart into everything we create.
+      </p>
+
+      <div class="pill-list">
+        <span class="pill" data-en="Coloring Books" data-tr="Boyama Kitapları">Coloring Books</span>
+        <span class="pill" data-en="Children's Books" data-tr="Çocuk Kitapları">Children's Books</span>
+        <span class="pill" data-en="Available on Amazon" data-tr="Amazon'da Mevcut">Available on Amazon</span>
+        <span class="pill" data-en="AI-Assisted Design" data-tr="Yapay Zeka Destekli Tasarım">AI-Assisted Design</span>
+        <span class="pill" data-en="Android Apps" data-tr="Android Uygulamaları">Android Apps</span>
+      </div>
+    </div>
+
+    <div class="about-right">
+      <div class="name-block">
+        <div class="name">Feride Pınar Tuna</div>
+        <div class="role" data-en="Founder & Publisher · Defnolia Studios" data-tr="Kurucu & Yayıncı · Defnolia Studios">Founder & Publisher · Defnolia Studios</div>
+      </div>
+
+      <p class="section-body" style="margin-top:24px" data-en="We combine thoughtful design with the latest creative tools to bring beautiful, accessible digital books to readers worldwide." data-tr="Güzel, erişilebilir dijital kitapları dünya genelindeki okuyuculara ulaştırmak için özenli tasarımı ve en yeni yaratıcı araçları bir araya getiriyoruz.">
+        We combine thoughtful design with the latest creative tools to bring beautiful, accessible digital books to readers worldwide.
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <!-- CONTACT -->
 <section id="contact" style="padding-top:56px; padding-bottom:80px">
   <div class="contact-box fade-up">
     <div>
       <p class="section-label" data-en="Get in Touch" data-tr="İletişime Geçin">Get in Touch</p>
       <h2 class="section-title" data-en="We'd love<br>to hear from you" data-tr="Sizden<br>haber almak isteriz">We'd love<br>to hear from you</h2>
-      <p class="section-body" style="margin-top:16px" data-en="Questions about our books, collaboration proposals, or just want to say hello — send us a message and we'll get back to you shortly." data-tr="Kitaplarımız hakkındaki sorular, iş birliği önerileri ya da sadece merhaba demek için — bize mesaj gönderin, kısa sürede geri döneceğiz.">
-        Questions about our books, collaboration proposals, or just want to say hello — send us a message and we'll get back to you shortly.
+      <p class="section-body" style="margin-top:16px" data-en="For app support, questions about our books or collaboration proposals, contact us on WhatsApp." data-tr="Uygulama desteği, kitaplarımızla ilgili sorular veya iş birliği önerileri için WhatsApp’tan bize ulaşın.">
+        For app support, questions about our books or collaboration proposals, contact us on WhatsApp.
       </p>
     </div>
 
@@ -766,15 +769,6 @@
           <a class="whatsapp-link" href="https://wa.me/905555690900" target="_blank" rel="noopener" data-en="Message on WhatsApp" data-tr="WhatsApp'tan Yazın">Message on WhatsApp</a>
           <button class="copy-number" type="button" onclick="copyWhatsappNumber(this)" data-en="Copy Number" data-tr="Numarayı Kopyala">Copy Number</button>
         </div>
-      </div>
-      <form class="contact-form" id="contactForm">
-        <input type="text" id="fname" placeholder="Name / İsim" required />
-        <input type="email" id="femail" placeholder="Email" required />
-        <textarea id="fmsg" placeholder="Message / Mesaj" required></textarea>
-        <button type="submit" data-en="Send via WhatsApp" data-tr="WhatsApp ile Gönder">Send via WhatsApp</button>
-      </form>
-      <div class="success-msg" id="successMsg" data-en="Your message is ready in WhatsApp." data-tr="Mesajınız WhatsApp'ta hazırlandı.">
-        Your message is ready in WhatsApp.
       </div>
     </div>
   </div>
@@ -850,17 +844,6 @@
       el.href = el.getAttribute('data-href-' + l);
     });
 
-    // Update form button text
-    const btn = document.querySelector('.contact-form button');
-    btn.textContent = l === 'tr' ? 'WhatsApp ile Gönder' : 'Send via WhatsApp';
-
-    // Update success msg
-    const sm = document.getElementById('successMsg');
-    sm.textContent = l === 'tr' ? "Mesajınız WhatsApp'ta hazırlandı." : 'Your message is ready in WhatsApp.';
-
-    // Update placeholders
-    document.getElementById('fname').placeholder = l === 'tr' ? 'İsim' : 'Name / İsim';
-    document.getElementById('fmsg').placeholder = l === 'tr' ? 'Mesaj' : 'Message / Mesaj';
   }
 
   const queryLanguage = new URLSearchParams(window.location.search).get('lang');
@@ -901,21 +884,6 @@
     temp.remove();
     showCopied();
   }
-
-  // ── CONTACT FORM ──
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const name = document.getElementById('fname').value.trim();
-    const email = document.getElementById('femail').value.trim();
-    const message = document.getElementById('fmsg').value.trim();
-    const text = lang === 'tr'
-      ? `Merhaba, hizmetleriniz hakkında detaylı bilgi almak istiyorum.\n\nİsim: ${name}\nE-posta: ${email}\nMesaj: ${message}`
-      : `Hello, I would like more information about your services.\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`;
-    const whatsappUrl = 'https://wa.me/905555690900?text=' + encodeURIComponent(text);
-
-    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-    document.getElementById('successMsg').style.display = 'block';
-  });
 
   // ── FADE IN ON SCROLL ──
   const observer = new IntersectionObserver((entries) => {
